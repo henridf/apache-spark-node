@@ -1,0 +1,22 @@
+#!/usr/bin/env node
+
+'use strict';
+
+process.title = 'spark-node';
+
+var repl = require('repl');
+
+var spark = require('../lib/spark');
+var args = process.argv.slice(2); // remove 'node spark-node'
+
+global.sqlContext= spark.init(args);
+
+global.df = sqlContext.read().json("/Users/henridf/work/spark/examples/src/main/resources/people.json")
+
+repl.start({
+    prompt: 'spark-node> ',
+    input: process.stdin,
+    output: process.stdout
+});
+
+
