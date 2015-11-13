@@ -2,6 +2,9 @@
 
 'use strict';
 
+var fs = require('fs');
+var path = require('path');
+
 process.title = 'spark-node';
 
 var repl = require('repl');
@@ -9,7 +12,14 @@ var repl = require('repl');
 var spark = require('../lib/spark');
 var args = process.argv.slice(2); // remove 'node spark-node'
 
-global.sqlContext= spark.init(args);
+var assembly_jar = process.env.ASSEMBLY_JAR;
+
+if (typeof assembly_jar != 'string' || !fs.statSync(path.join(assembly_jar)).isFile()) {
+    console.error("Error: ASSEMBLY_JAR environment variable does not contain valid path");
+    process.exit(1);
+}
+
+global.sqlContext= spark.init(args, assembly_jar);
 
 global.df = sqlContext.read().json("/Users/henridf/work/spark/examples/src/main/resources/people.json")
 
