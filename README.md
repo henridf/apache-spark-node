@@ -29,21 +29,21 @@ Getting started
 
 ### Running
 
-Set ASSEMBLY_JAR to the location of your assembly JAR and run `node-spark`:
+Set ASSEMBLY_JAR to the location of your assembly JAR and run `spark-node`:
 ```shell
-ASSEMBLY_JAR=/path/to/spark-assembly-1.6.0-SNAPSHOT-hadoop2.2.0.jar bin/node-spark
+ASSEMBLY_JAR=/path/to/spark-assembly-1.6.0-SNAPSHOT-hadoop2.2.0.jar bin/spark-node
 ```
 
 Usage
 -----
 
-(Note: This section is a quick overview of the available APIs in node-spark;
+(Note: This section is a quick overview of the available APIs in spark-node;
 it is not general introduction to Spark or to DataFrames.)
 
-Start the node-spark shell (this assumes you've that you've `ASSEMBLY_JAR` as
+Start the spark-node shell (this assumes you've that you've `ASSEMBLY_JAR` as
 an environment variable):
 
-    $ ./bin/node-spark
+    $ ./bin/spark-node
 
 A `sqlContext` global object is available in the shell. Its functions are used to create
 DataFrames, register DataFrames as tables, execute SQL over tables, cache
