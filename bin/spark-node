@@ -21,8 +21,7 @@ if (typeof assembly_jar != 'string' || !fs.statSync(path.join(assembly_jar)).isF
 
 // make sqlContext globally accessible (like pyspark and spark-shell)
 global.sqlContext= spark.sqlContext(args, assembly_jar);
-
-//global.df = sqlContext.read().json("/Users/henridf/work/spark/examples/src/main/resources/people.json")
+global.sqlFunctions = spark.sqlFunctions();
 
 repl.start({
     prompt: 'spark-node> ',
