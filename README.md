@@ -26,12 +26,11 @@ Getting started
 
 `npm install apache-spark-node`
 
-
 ### Running
 
-Set ASSEMBLY_JAR to the location of your assembly JAR and run `spark-node`:
+Set ASSEMBLY_JAR to the location of your assembly JAR and run `spark-node` from the directory where you issued `npm install apache-spark-node`:
 ```shell
-ASSEMBLY_JAR=/path/to/spark-assembly-1.6.0-SNAPSHOT-hadoop2.2.0.jar bin/spark-node
+ASSEMBLY_JAR=/path/to/spark-assembly-1.6.0-SNAPSHOT-hadoop2.2.0.jar node_modules/apache-spark-node/bin/spark-node
 ```
 
 Usage
