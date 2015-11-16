@@ -107,7 +107,20 @@ For example, to find the minimum and average of "age" across all rows:
 
     $ df.agg(F.min(df.col("age")), F.avg(df.col("age"))).show()
 
-#### API documentation
+
+### Running SQL Queries Programmatically
+
+Register `people` as a table:
+
+    $ people.registerTempTable("people")
+
+Run a SQL query:
+
+    $ var teens = sqlContext.sql("SELECT name FROM people WHERE age >= 13 AND age <= 19")
+    $ teens.show()
+
+API documentation
+-----------------
 
 For a complete list of the types of operations that can be performed on a
 DataFrame refer to the API Documentation.
@@ -124,7 +137,7 @@ Java API, like the (current) JavaScript API, does not have such a feature, and
 so is the most useful one to consult for that portion of the API.
 
 
-##### API documentation links
+### API documentation links
 
 DataFrame API:
 - [Scala API](http://spark.apache.org/docs/latest/api/scala/index.html#org.apache.spark.sql.DataFrame)
@@ -140,16 +153,6 @@ DataFrame Functions:
 - [R API](http://spark.apache.org/docs/latest/api/R/index.html)
 
 
-### Running SQL Queries Programmatically
-
-Register `people` as a table:
-
-    $ people.registerTempTable("people")
-
-Run a SQL query:
-
-    $ var teens = sqlContext.sql("SELECT name FROM people WHERE age >= 13 AND age <= 19")
-    $ teens.show()
 
 ## Misc notes
 
