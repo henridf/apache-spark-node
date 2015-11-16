@@ -11,9 +11,8 @@ Getting started
 
 - Node: Developed with Node 0.12.7. Should work with later versions, but I haven't
   tested yet. Feedback from anyone trying out with other versions would be helpful.
-- Java: Developed with Java 8. Should work with Java 7, but I haven't tested
-  that yet. Feedback from anyone trying out with Java 7 would be helpful.
-- Spark (known to work with 1.6). You'll need the Spark Assembly jar, which
+- Java 8
+- Spark >= 1.5. You'll need the Spark Assembly jar, which
   contains all of the Spark classes. If you don't have an existing
   installation, the easiest is to get the binaries from the
   [Spark downloads page](http://spark.apache.org/downloads.html) (choose
@@ -154,7 +153,8 @@ DataFrame Functions:
 
 
 
-## Misc notes
+Misc notes
+----------
 
 This was done under the self-imposed constraint of not making modifications to
 the spark sources. This results in hacks like the `NodeSparkSubmit` Scala
