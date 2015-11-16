@@ -19,7 +19,8 @@ if (typeof assembly_jar != 'string' || !fs.statSync(path.join(assembly_jar)).isF
     process.exit(1);
 }
 
-// make sqlContext globally accessible (like pyspark and spark-shell)
+// make sc and sqlContext globally accessible (like pyspark and spark-shell)
+global.sc = spark.sparkContext(args, assembly_jar);
 global.sqlContext= spark.sqlContext(args, assembly_jar);
 global.sqlFunctions = spark.sqlFunctions();
 
