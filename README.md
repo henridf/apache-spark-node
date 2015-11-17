@@ -152,6 +152,39 @@ DataFrame Functions:
 - [R API](http://spark.apache.org/docs/latest/api/R/index.html)
 
 
+Examples
+--------
+
+#### Word count (aka 'big data hello world')
+
+Create dataframe from text file:
+
+    $ var lines = sqlContext.read().format("text").load("data/words.txt");
+
+The dataframe has a single column named "value", of type String:
+
+```
+spark-node> lines.printSchema()
+root
+ |-- value: string (nullable = true)
+```
+
+Split strings into arrays:
+
+    $ var F = sqlFunctions;
+    $ var splits = lines.select(F.split(lines.col("value"), " ").as("words"));
+
+Explode the arrays into individual rows:
+
+    $ var occurrences = splits.select(F.explode(splits.col("words")).as("word"));
+
+We now have a dataframe with one row per word occurrence. So we group
+and count occurrences of the same word and we're done:
+
+    $ var counts = occurrences.groupBy("word").count()
+
+    $ counts.where("count>10").sort(counts.col("count")).show()
+
 
 Misc notes
 ----------

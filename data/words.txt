@@ -1,0 +1,74 @@
+Apache Spark is an open source cluster computing framework originally
+developed in the AMPLab at University of California, Berkeley but was later
+donated to the Apache Software Foundation where it remains today. In contrast
+to Hadoop's two-stage disk-based MapReduce paradigm, Spark's multi-stage
+in-memory primitives provides performance up to 100 times faster for certain
+applications.[1] By allowing user programs to load data into a cluster's
+memory and query it repeatedly, Spark is well-suited to machine learning
+algorithms.[2] Spark requires a cluster manager and a distributed storage
+system. For cluster management, Spark supports standalone (native Spark
+cluster), Hadoop YARN, or Apache Mesos.[3] For distributed storage, Spark can
+interface with a wide variety, including Hadoop Distributed File System
+(HDFS),[4] Cassandra,[5] OpenStack Swift, Amazon S3, Kudu, or a custom
+solution can be implemented. Spark also supports a pseudo-distributed local
+mode, usually used only for development or testing purposes, where distributed
+storage is not required and the local file system can be used instead; in such
+a scenario, Spark is run on a single machine with one executor per CPU core.
+Spark had in excess of 465 contributors in 2014,[6] making it not only the
+most active project in the Apache Software Foundation[citation needed] but one
+of the most active open source big data projects.[cit
+
+Spark was initially started by Matei Zaharia at UC Berkeley AMPLab in 2009,
+and open sourced in 2010 under a BSD license.  In 2013, the project was
+donated to the Apache Software Foundation and switched its license to Apache
+2.0. In February 2014, Spark became a Top-Level Apache Project.[7] In November
+2014, the engineering team at Databricks used Spark and set a new world record
+in large scale sorting.[8]
+
+Spark Core and Resilient Distributed Datasets[edit] Spark Core is the
+foundation of the overall project. It provides distributed task dispatching,
+scheduling, and basic I/O functionalities. The fundamental programming
+abstraction is called Resilient Distributed Datasets (RDDs), a logical
+collection of data partitioned across machines. RDDs can be created by
+referencing datasets in external storage systems, or by applying
+coarse-grained transformations (e.g. map, filter, reduce, join) on existing
+RDDs.  The RDD abstraction is exposed through a language-integrated API in
+Java, Python, Scala, and R similar to local, in-process collections. This
+simplifies programming complexity because the way applications manipulate RDDs
+is similar to manipulating local collections of data.  A Spark cluster is
+composed of one Driver JVM and one or many Executor JVMs.
+
+Spark SQL[edit] Spark SQL is a component on top of Spark Core that introduces
+a new data abstraction called DataFrames, which provides support for
+structured and semi-structured data. Spark SQL provides a domain-specific
+language to manipulate DataFrames in Scala, Java, or Python. It also provides
+SQL language support, with command-line interfaces and ODBC/JDBC server. Prior
+to version 1.3 of Spark, DataFrames were referred to as SchemaRDDs.[citation
+needed] Spark Streaming[edit] Spark Streaming leverages Spark Core's fast
+scheduling capability to perform streaming analytics. It ingests data in
+mini-batches and performs RDD transformations on those mini-batches of
+data. This design enables the same set of application code written for batch
+analytics to be used in streaming analytics, on a single engine.[citation
+needed] MLlib Machine Learning Library[edit] Spark MLlib is a distributed
+machine learning framework on top of Spark Core that, due in large part of the
+distributed memory-based Spark architecture, is as much as nine times as fast
+as the disk-based implementation used by Apache Mahout (according to
+benchmarks done by the MLlib developers against the Alternating Least Squares
+(ALS) implementations, and before Mahout itself gained a Spark interface), and
+scales better than Vowpal Wabbit.[9] Many common machine learning and
+statistical algorithms have been implemented and are shipped with MLlib which
+simplifies large scale machine learning pipelines, including: summary
+statistics, correlations, stratified sampling, hypothesis testing, random data
+generation classification and regression: state vector machines, logistic
+regression, linear regression, decision trees, naive Bayes classification
+collaborative filtering techniques including alternating least squares (ALS)
+cluster analysis methods including k-means, and Latent Dirichlet Allocation
+(LDA) dimensionality reduction techniques such as singular value decomposition
+(SVD), and principal component analysis (PCA) feature extraction and
+transformation functions optimization primitives such as stochastic gradient
+descent, limited-memory BFGS (L-BFGS) GraphX[edit] GraphX is a distributed
+graph processing framework on top of Spark. It provides an API for expressing
+graph computation that can model the Pregel abstraction. It also provides an
+optimized runtime for this abstraction.  Like Spark, GraphX initially started
+as a research project at UC Berkeley's AMPLab and Databricks, and was later
+donated to the Apache Software Foundation and the Spark project.[10]
