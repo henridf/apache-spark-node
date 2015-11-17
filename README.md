@@ -161,13 +161,8 @@ Create dataframe from text file:
 
     $ var lines = sqlContext.read().format("text").load("data/words.txt");
 
-The dataframe has a single column named "value", of type String:
+(_Note: support for the "text" format was added in Spark 1.6_).
 
-```
-spark-node> lines.printSchema()
-root
- |-- value: string (nullable = true)
-```
 
 Split strings into arrays:
 
