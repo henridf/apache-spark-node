@@ -4,6 +4,23 @@ apache-spark-node
 Node.js bindings for the Apache Spark DataFrame APIs.
 
 
+
+(2015-11-18) THIS IS A WORK IN PROGRESS
+---------------------------------------
+
+This project should already be usable in its present form, but it is still
+very early on and missing a number of things, such as:
+
+- support for user-defined functions
+- a javascript API wrapper and documentation
+- jvm-side helpers to for functions/methods which cannot currently be called
+  from node (because they take parameters types like `Seq`)
+- tests
+
+
+APIs are likely to change.
+
+
 Getting started
 ---------------
 
