@@ -9,7 +9,7 @@ process.title = 'spark-node';
 
 var repl = require('repl');
 
-var spark = require('../lib/spark');
+var spark = require('../js/spark');
 var args = process.argv.slice(2); // remove 'node spark-node'
 
 var assembly_jar = process.env.ASSEMBLY_JAR;
