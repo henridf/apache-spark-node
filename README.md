@@ -5,20 +5,18 @@ Node.js bindings for the Apache Spark DataFrame APIs.
 
 
 
-(2015-11-18) THIS IS A WORK IN PROGRESS
----------------------------------------
+(2015-11-22) WORK IN PROGRESS
+----------------------------
 
 This project should already be usable in its present form, but it is still
-very early on and missing a number of things, such as:
+very early on. Notably not yet implemented are:
 
+- tests
 - support for user-defined functions
-- a javascript API wrapper and documentation
 - jvm-side helpers to for functions/methods which cannot currently be called
   from node (because they take parameters types like `Seq`)
-- tests
 
-
-APIs are likely to change.
+APIs are still likely to change.
 
 
 Getting started
@@ -134,39 +132,6 @@ Run a SQL query:
 
     $ var teens = sqlContext.sql("SELECT name FROM people WHERE age >= 13 AND age <= 19")
     $ teens.show()
-
-API documentation
------------------
-
-For a complete list of the types of operations that can be performed on a
-DataFrame refer to the API Documentation.
-
-There currently is no node-specific version, but the node bindings are
-very similar to their counterparts in the "officially" supported languages
-(Java, Python, R, Scala), so consulting those is the best route for
-now. The docs are linked below for convenience.
-
-Note that Scala, Python, and R APIs support a DSL-like way of writing
-expressions with dataframes. For example, the above example that selects
-people older than 21 could be written `df.filter(df['age'] > 21).show()`. The
-Java API, like the (current) JavaScript API, does not have such a feature, and
-so is the most useful one to consult for that portion of the API.
-
-
-### API documentation links
-
-DataFrame API:
-- [Scala API](http://spark.apache.org/docs/latest/api/scala/index.html#org.apache.spark.sql.DataFrame)
-- [Java API](http://spark.apache.org/docs/latest/api/java/org/apache/spark/sql/DataFrame.html)
-- [Python API](http://spark.apache.org/docs/latest/api/python/pyspark.sql.html#pyspark.sql.DataFrame)
-- [R API](http://spark.apache.org/docs/latest/api/R/index.html)
-
-
-DataFrame Functions:
-- [Scala API](http://spark.apache.org/docs/latest/api/scala/index.html#org.apache.spark.sql.functions$)
-- [Java API](http://spark.apache.org/docs/latest/api/java/org/apache/spark/sql/functions.html)
-- [Python API](http://spark.apache.org/docs/latest/api/python/pyspark.sql.html#module-pyspark.sql.functions)
-- [R API](http://spark.apache.org/docs/latest/api/R/index.html)
 
 
 Examples
