@@ -1,5 +1,7 @@
 node_modules
 
+js
+
 # NPM logs
 *.log
 
