@@ -126,9 +126,9 @@ For example, to find the minimum and average of "age" across all rows:
 
 ### Running SQL Queries Programmatically
 
-Register `people` as a table:
+Register `df` as a table named `people`:
 
-    $ people.registerTempTable("people")
+    $ df.registerTempTable("people")
 
 Run a SQL query:
 
