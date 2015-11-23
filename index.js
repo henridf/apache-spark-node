@@ -1,8 +1,8 @@
 'use strict';
 
-var java = require('./java');
-var sqlContext = require('./sqlContext');
-var functions = require('./functions');
+var java = require('./js/java');
+var sqlContext = require('./js/sqlContext');
+var functions = require('./js/functions');
 
 function sparkConf(master, appName) {
     var SparkConf = java.import("org.apache.spark.SparkConf");
@@ -26,8 +26,6 @@ function spark_parseArgs(args) {
 }
 
 var sc;
-
-
 
 function sparkContext(args, assembly_jar) {
     if (sc) return sc;
