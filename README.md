@@ -1,7 +1,7 @@
 apache-spark-node
 =================
 
-Node.js bindings for the Apache Spark DataFrame APIs.
+Node.js bindings for Apache Spark.
 
 
 
