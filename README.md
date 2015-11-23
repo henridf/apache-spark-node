@@ -62,6 +62,8 @@ A `sqlContext` global object is available in the shell. Its functions are used t
 DataFrames, register DataFrames as tables, execute SQL over tables, cache
 tables, and read parquet files.
 
+To see available command-line options, do `./bin/spark-node --help`.
+
 
 ### Creating a DataFrame
 
