@@ -151,8 +151,69 @@ describe('Smoke test', function() {
             done();
         });
 
+        it('df.agg(F.min(df.col("age")), F.avg(df.col("age"))).show()', function(done) {
+            var F = spark.sqlFunctions();
+            var output = df.agg(F.min(df.col("age")), F.avg(df.col("age"))).jvm_obj.showString(20, true).split("\n");
+            /*
+             +--------+--------+
+             |min(age)|avg(age)|
+             +--------+--------+
+             |      19|    24.5|
+             +--------+--------+
+             */
+
+            expect(output[1]).to.match(/.*min\(age\).*avg\(age\).*/);
+            expect(output[3]).to.match(/.*19.*24\.5.*/);
+            done();
+        });
+
+        it('sqlContext.sql("SELECT name FROM people WHERE age >= 13 AND age <= 19")', function(done) {
+            df.registerTempTable("people");
+            var output = sqlContext.sql("SELECT name FROM people WHERE age >= 13 AND age <= 19").jvm_obj.showString(20, true).split("\n");
+            /*
+             +------+
+             |  name|
+             +------+
+             |Justin|
+             +------+
+             */
+            expect(output[1]).to.match(/.*name.*/);
+            expect(output[3]).to.match(/.*Justin.*/);
+            done();
+        });
     });
 
+    describe('Readme example: word count', function() {
+
+
+        it('check counts ', function(done) {
+
+            var sqlContext = spark.sqlContext([], process.env.ASSEMBLY_JAR);
+            var lines = sqlContext.read().text(path.join(__dirname, "..", "data/words.txt"));
+            var F = spark.sqlFunctions();
+            var splits = lines.select(F.split(lines.col("value"), " ").as("words"));
+            var occurrences = splits.select(F.explode(splits.col("words")).as("word"));
+            var counts = occurrences.groupBy("word").count()
+            var output = counts.where("count>10").sort(counts.col("count")).jvm_obj.showString(20, true).split("\n");
+            /*
+             +-----+-----+
+             | word|count|
+             +-----+-----+
+             |   is|   13|
+             |   in|   14|
+             |   of|   14|
+             |   to|   16|
+             |  the|   20|
+             |    a|   21|
+             |  and|   24|
+             |Spark|   27|
+             +-----+-----+
+             */
+            expect(output[3]).to.match(/.*is.*13.*/);
+            expect(output[10]).to.match(/.*Spark.*27.*/);
+            done()
+        });
+    });
 
 });
 

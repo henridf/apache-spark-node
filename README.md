@@ -143,7 +143,7 @@ Examples
 
 Create dataframe from text file:
 
-    $ var lines = sqlContext.read().format("text").load("data/words.txt");
+    $ var lines = sqlContext.read().text("data/words.txt");
 
 (_Note: support for the "text" format was added in Spark 1.6_).
 
