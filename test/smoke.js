@@ -47,7 +47,6 @@ describe('Smoke test', function() {
 
         it('var df = sqlContext.read().json("data/people.json");', function(done) {
             df = sqlContext.read().json(path.join(__dirname, "..", "data/people.json"));
-            console.log(df.constructor.name);
             expect(df).to.be.an.instanceof(DataFrame);
             done();
         });
@@ -134,7 +133,7 @@ describe('Smoke test', function() {
             done();
         });
 
-        it.skip('df.groupBy("age").count().show()', function(done) {
+        it('df.groupBy("age").count().show()', function(done) {
             var output = df.groupBy("age").count().jvm_obj.showString(20, true).split("\n");
             /*
              +----+-----+
