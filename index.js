@@ -15,7 +15,8 @@ function spark_parseArgs(args) {
     args =
         // fake presence of a main class so that SparkSubmitArguments doesn't
         // bail. (It won't be run)
-        ['--class', 'org.apache.spark.repl.Main']
+        ['--class', 'org.apache.spark.repl.Main',
+         '--name', 'spark-node shell']
         .concat(args)
         .concat(['spark-shell']);
 
