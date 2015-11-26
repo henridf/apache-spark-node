@@ -53,11 +53,11 @@ function _sqlContext(args, assembly_jar) {
 
     var sc = sparkContext(args, assembly_jar);
 
-    return sqlContext(sc, java);
+    return sqlContext(sc);
 }
 
 function sqlFunctions() {
-    return functions(java);
+    return functions();
 }
 
 module.exports = {
