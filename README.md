@@ -165,6 +165,37 @@ and count occurrences of the same word and we're done:
     $ counts.where("count>10").sort(counts.col("count")).show()
 
 
+
+#### Running `spark-node` against a standalone cluster
+
+When you run `bin/spark-node` without passing a `--master` argument, the
+spark-node process runs a spark worker in the same process. To run the
+spark-node shell against a cluser, use the `--master` argument. Here's an
+example.
+
+On a worker node, do the following:
+
+    $ cd path/to/spark/distribution
+    $ ./sbin/start-master.sh
+
+Navigate to `http://hostname:8080` and get the Spark URL (top line), which
+will be something like `spark://worker_hostname:7077`. Then start any number of
+slaves on your cluster hosts by running `./sbin/start-slave.sh --master <spark_url>`.
+
+
+Then on your client machine:
+
+    $ cd path/to/apache-spark-node
+    $ ./bin/spark-node --master <spark_url>
+
+
+If you return to the master Web UI (`http://hostname:8080`), you should now
+see an application with name "spark-node shell" under "Running
+applications". Following that link gets you to the Web UI of the node-spark
+shell itself.
+
+
+
 Misc notes
 ----------
 
