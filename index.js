@@ -64,4 +64,4 @@ module.exports = {
     sparkContext: sparkContext,
     sqlContext: _sqlContext,
     sqlFunctions: sqlFunctions
-}
+};
