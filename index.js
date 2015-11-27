@@ -4,7 +4,7 @@ var java = require("./js/java");
 var sqlContext = require("./js/sqlContext");
 var functions = require("./js/functions");
 
-function sparkConf(master, appName) {
+function sparkConf() {
     var SparkConf = java.import("org.apache.spark.SparkConf");
     var conf = new SparkConf();
     return conf;
