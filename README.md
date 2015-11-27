@@ -4,14 +4,9 @@ apache-spark-node
 Node.js bindings for Apache Spark.
 
 
+This project is already usable in its present form, but it is still pretty early
+on. Notably not yet implemented are:
 
-(2015-11-22) WORK IN PROGRESS
-----------------------------
-
-This project should already be usable in its present form, but it is still
-very early on. Notably not yet implemented are:
-
-- tests
 - support for user-defined functions
 - jvm-side helpers to for functions/methods which cannot currently be called
   from node (because they take parameters types like `Seq`)
@@ -38,7 +33,17 @@ Getting started
 
 ### Installing
 
-`npm install apache-spark-node`
+#### From NPM
+
+    $ npm install apache-spark-node
+
+#### From source
+
+Clone git repo, then:
+
+    $ npm install
+    $ npm run compile
+
 
 ### Running
 
