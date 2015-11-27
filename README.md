@@ -40,12 +40,38 @@ Getting started
 
 `npm install apache-spark-node`
 
-### Running
+### Running in terminal (locally)
 
 Set ASSEMBLY_JAR to the location of your assembly JAR and run `spark-node` from the directory where you issued `npm install apache-spark-node`:
 ```shell
 ASSEMBLY_JAR=/path/to/spark-assembly-1.6.0-SNAPSHOT-hadoop2.2.0.jar node_modules/apache-spark-node/bin/spark-node
 ```
+
+### Running as Docker image
+
+**Building**
+
+The command
+
+    $ docker build -t {YOUR_NAMESPACE}/spark-node .
+
+will build the Docker image with `{YOUR_NAMESPACE}`.
+
+**Running**
+
+It can then be run via 
+
+    $ docker run -it {YOUR_NAMESPACE}/spark-node
+    
+This will take you to the normal `spark-node` shell. Optionally, you can map host volumes to use files on your host system with `spark-node`. For example
+ 
+    $ docker run -v /var/data:/data -it {YOUR_NAMESPACE}/spark-node
+    
+will map the host's `/var/data` directory to `/data` within the Docker image. This means that you can use
+
+    $ var df = sqlContext.read().json("/data/people.json")
+
+to load a file at `/var/data/people.json` on the host system.
 
 Usage
 -----
