@@ -33,7 +33,17 @@ Getting started
 
 ### Installing
 
-`npm install apache-spark-node`
+#### From NPM
+
+    $ npm install apache-spark-node
+
+#### From source
+
+Clone git repo, then:
+
+    $ npm install
+    $ npm run compile
+
 
 ### Running in terminal (locally)
 
