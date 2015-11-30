@@ -56,7 +56,7 @@ ASSEMBLY_JAR=/path/to/spark-assembly-1.6.0-SNAPSHOT-hadoop2.2.0.jar node_modules
 If you want to play with spark-node but don't want to download the
 dependencies or build, you can run it in docker.
 
-    $ docker run -it tobilg/spark-node
+    $ docker run -it henridf/spark-node
 
 This will take you to the normal `spark-node` shell. Optionally, you can map
 host volumes to use files on your host system with `spark-node`. For example
