@@ -2,6 +2,8 @@ node_modules
 
 js
 
+out
+
 # NPM logs
 *.log
 
