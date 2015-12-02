@@ -19,8 +19,10 @@ if (typeof assembly_jar != "string" || !fs.statSync(path.join(assembly_jar)).isF
     process.exit(1);
 }
 
-// make sc and sqlContext globally accessible (like pyspark and spark-shell)
-global.sc = spark_node.sparkContext(args, assembly_jar);
+// don't expose sparkcontext until/if we support RDD's
+// global.sc = spark_node.sparkContext(args, assembly_jar); don'
+
+// make sqlContext globally accessible (like pyspark and spark-shell)
 global.sqlContext= spark_node.sqlContext(args, assembly_jar);
 global.sqlFunctions = spark_node.sqlFunctions();
 
