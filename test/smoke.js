@@ -1,7 +1,7 @@
 var expect = require('chai').expect;
 var path = require('path');
 
-var spark = require('../');
+var spark = require('..');
 
 var DataFrame = require('../js/DataFrame');
 var Row = require('../js/Row');
@@ -16,7 +16,7 @@ describe('Smoke test', function() {
         var args = ["--class", "org.apache.spark.repl.Main",
                     "shark-shell"];
 
-        sqlContext= spark.sqlContext(args, process.env.ASSEMBLY_JAR);
+        sqlContext = spark(args, process.env.ASSEMBLY_JAR).sqlContext;
         done();
     })
 
@@ -44,7 +44,7 @@ describe('Smoke test', function() {
         var df, sqlContext;
 
         it('create sqlContext', function(done) {
-            sqlContext= spark.sqlContext([], process.env.ASSEMBLY_JAR);
+            sqlContext = spark([], process.env.ASSEMBLY_JAR).sqlContext;
             done();
         });
 
@@ -155,7 +155,8 @@ describe('Smoke test', function() {
         });
 
         it('df.agg(F.min(df.col("age")), F.avg(df.col("age"))).show()', function(done) {
-            var F = spark.sqlFunctions();
+            var F = spark([], process.env.ASSEMBLY_JAR).sqlFunctions;
+
             var output = df.agg(F.min(df.col("age")), F.avg(df.col("age"))).jvm_obj.showString(20, true).split("\n");
             /*
              +--------+--------+
@@ -191,9 +192,9 @@ describe('Smoke test', function() {
 
         it('check counts ', function(done) {
 
-            var sqlContext = spark.sqlContext([], process.env.ASSEMBLY_JAR);
+            var sqlContext = spark([], process.env.ASSEMBLY_JAR).sqlContext;
             var lines = sqlContext.read().text(path.join(__dirname, "..", "data/words.txt"));
-            var F = spark.sqlFunctions();
+            var F = spark([], process.env.ASSEMBLY_JAR).sqlFunctions;
             var splits = lines.select(F.split(lines.col("value"), " ").as("words"));
             var occurrences = splits.select(F.explode(splits.col("words")).as("word"));
             var counts = occurrences.groupBy("word").count()
