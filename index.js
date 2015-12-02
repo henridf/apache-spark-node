@@ -11,19 +11,9 @@ function sparkConf() {
 }
 
 function spark_parseArgs(args) {
-
-    args =
-        // fake presence of a main class so that SparkSubmitArguments doesn't
-        // bail. (It won't be run)
-        ["--class", "org.apache.spark.repl.Main",
-         "--name", "spark-node shell"]
-        .concat(args)
-        .concat(["spark-shell"]);
-
     var jArgs = java.newArray("java.lang.String", args);
     var NodeSparkSubmit = java.import("org.apache.spark.deploy.NodeSparkSubmit");
     NodeSparkSubmit.apply(jArgs);
-
 }
 
 var sc;
@@ -56,12 +46,8 @@ function _sqlContext(args, assembly_jar) {
     return sqlContext(sc);
 }
 
-function sqlFunctions() {
-    return functions();
-}
-
 module.exports = {
     sparkContext: sparkContext,
     sqlContext: _sqlContext,
-    sqlFunctions: sqlFunctions
+    sqlFunctions: functions
 };

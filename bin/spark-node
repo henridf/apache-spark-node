@@ -10,7 +10,15 @@ process.title = "spark-node";
 var repl = require("repl");
 
 var spark_node = require("../");
-var args = process.argv.slice(2); // remove 'node spark-node'
+var args =
+        // fake presence of a main class so that SparkSubmitArguments doesn't
+        // bail. (It won't be run)
+        ["--class", "org.apache.spark.repl.Main",
+         "--name", "spark-node shell"]
+        .concat(
+            process.argv.slice(2) // remove 'node spark-node'
+        )
+        .concat(["spark-shell"]);
 
 var assembly_jar = process.env.ASSEMBLY_JAR;
 

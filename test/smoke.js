@@ -13,7 +13,10 @@ describe('Smoke test', function() {
     this.timeout(10000);
 
     it('create sqlContext', function(done) {
-        sqlContext= spark.sqlContext([], process.env.ASSEMBLY_JAR);
+        var args = ["--class", "org.apache.spark.repl.Main",
+                    "shark-shell"];
+
+        sqlContext= spark.sqlContext(args, process.env.ASSEMBLY_JAR);
         done();
     })
 
