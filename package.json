@@ -4,7 +4,7 @@
   "description": "node.js bindings for Apache Spark",
   "main": "index.js",
   "scripts": {
-    "test": "mocha test/smoke.js",
+    "test": "mocha test/*.js",
     "compile": "babel --out-dir js lib",
     "lint": "eslint index.js lib/* bin/spark-node",
     "prepublish": "npm run compile",
