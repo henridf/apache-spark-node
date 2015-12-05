@@ -1,63 +1,62 @@
-var expect = require('chai').expect;
-var path = require('path');
+var expect = require("chai").expect;
+var path = require("path");
 
-var spark = require('..');
+var spark = require("..");
 
-var DataFrame = require('../js/DataFrame');
-var Row = require('../js/Row');
+var DataFrame = require("../js/DataFrame");
 
 
-describe('Smoke test', function() {
-    var df, sqlContext;
+describe("Smoke test", function() {
+    var sqlContext;
 
     this.timeout(10000);
 
-    it('create sqlContext', function(done) {
+    it("create sqlContext", function(done) {
         var args = ["--class", "org.apache.spark.repl.Main",
                     "shark-shell"];
 
         sqlContext = spark(args, process.env.ASSEMBLY_JAR).sqlContext;
         done();
-    })
+    });
 
-    it('sqlContext.read().json() returns DataFrame', function(done) {
+    it("sqlContext.read().json() returns DataFrame", function(done) {
         var df = sqlContext.read().json(path.join(__dirname, "..", "data/people.json"));
         expect(df).to.be.an.instanceof(DataFrame);
         done();
-    })
+    });
 
-    it('sqlContext.read().collect() returns array of Rows with correct values', function(done) {
+    it("sqlContext.read().collect() returns array of Rows with correct values", function(done) {
         var rows = sqlContext.read().json("./data/people.json").collect();
 
-        rows.forEach(function (row) { expect(row).to.be.an.instanceof(Object);})
+        rows.forEach(function (row) { expect(row).to.be.an.instanceof(Object);});
 
-        expect(rows).to.deep.equal([[null, 'Michael'], [30, 'Andy'], [19, 'Justin']]);
+        expect(rows).to.deep.equal([[null, "Michael"], [30, "Andy"], [19, "Justin"]]);
 
         done();
-    })
+    });
 
 
-    describe('Readme steps', function() {
+    describe("Readme steps", function() {
         var df, sqlContext;
 
-        it('create sqlContext', function(done) {
+        it("create sqlContext", function(done) {
             sqlContext = spark([], process.env.ASSEMBLY_JAR).sqlContext;
             done();
         });
 
-        it('var df = sqlContext.read().json("data/people.json");', function(done) {
+        it("var df = sqlContext.read().json(\"data/people.json\");", function(done) {
             df = sqlContext.read().json(path.join(__dirname, "..", "data/people.json"));
             expect(df).to.be.an.instanceof(DataFrame);
             done();
         });
 
-        it('var df = sqlContext.createDataFrame([{"name":"Michael"}, {"name":"Andy", "age":30}, {"name":"Justin", "age": 19}])', function(done) {
+        it("var df = sqlContext.createDataFrame([{\"name\":\"Michael\"}, {\"name\":\"Andy\", \"age\":30}, {\"name\":\"Justin\", \"age\": 19}])", function(done) {
             df = sqlContext.createDataFrame([{"name":"Michael"}, {"name":"Andy", "age":30}, {"name":"Justin", "age": 19}]);
             expect(df).to.be.an.instanceof(DataFrame);
             done();
         });
 
-        it('df.show()', function(done) {
+        it("df.show()", function(done) {
             var output = df.jvm_obj.showString(20, true).split("\n");
             /*
              +----+-------+
@@ -75,7 +74,7 @@ describe('Smoke test', function() {
             done();
         });
 
-        it('df.printSchema()', function(done) {
+        it("df.printSchema()", function(done) {
             var output = df.jvm_obj.schema().treeString().split("\n");
             /*
              root
@@ -87,7 +86,7 @@ describe('Smoke test', function() {
             done();
         });
 
-        it('df.select(df.col("name")).show()', function(done) {
+        it("df.select(df.col(\"name\")).show()", function(done) {
             var output = df.select(df.col("name")).jvm_obj.showString(20, true).split("\n");
             /*
              +-------+
@@ -102,19 +101,19 @@ describe('Smoke test', function() {
             done();
         });
 
-        it('df.select("name").show()', function(done) {
+        it("df.select(\"name\").show()", function(done) {
             var output = df.select("name").jvm_obj.showString(20, true).split("\n");
             expect(output[5]).to.equal("| Justin|");
             done();
         });
 
-        it('var res = df.select("name").collect()', function(done) {
+        it("var res = df.select(\"name\").collect()", function(done) {
             var res = df.select("name").collect();
             expect(res).to.deep.equal([["Michael"], ["Andy"], ["Justin"]]);
             done();
         });
 
-        it('df.select(df.col("name"), df.col("age").plus(1)).show()', function(done) {
+        it("df.select(df.col(\"name\"), df.col(\"age\").plus(1)).show()", function(done) {
             var output = df.select(df.col("name"), df.col("age").plus(1)).jvm_obj.showString(20, true).split("\n");
             /*
              +-------+---------+
@@ -131,7 +130,7 @@ describe('Smoke test', function() {
             done();
         });
 
-        it('df.filter(df.col("age").gt(21)).show()', function(done) {
+        it("df.filter(df.col(\"age\").gt(21)).show()", function(done) {
             var output = df.filter(df.col("age").gt(21)).jvm_obj.showString(20, true).split("\n");
             /*
              +---+----+
@@ -145,7 +144,7 @@ describe('Smoke test', function() {
             done();
         });
 
-        it('df.groupBy("age").count().show()', function(done) {
+        it("df.groupBy(\"age\").count().show()", function(done) {
             var output = df.groupBy("age").count().jvm_obj.showString(20, true).split("\n");
             /*
              +----+-----+
@@ -163,7 +162,7 @@ describe('Smoke test', function() {
             done();
         });
 
-        it('df.agg(F.min(df.col("age")), F.avg(df.col("age"))).show()', function(done) {
+        it("df.agg(F.min(df.col(\"age\")), F.avg(df.col(\"age\"))).show()", function(done) {
             var F = spark([], process.env.ASSEMBLY_JAR).sqlFunctions;
 
             var output = df.agg(F.min(df.col("age")), F.avg(df.col("age"))).jvm_obj.showString(20, true).split("\n");
@@ -180,7 +179,7 @@ describe('Smoke test', function() {
             done();
         });
 
-        it('sqlContext.sql("SELECT name FROM people WHERE age >= 13 AND age <= 19")', function(done) {
+        it("sqlContext.sql(\"SELECT name FROM people WHERE age >= 13 AND age <= 19\")", function(done) {
             df.registerTempTable("people");
             var output = sqlContext.sql("SELECT name FROM people WHERE age >= 13 AND age <= 19").jvm_obj.showString(20, true).split("\n");
             /*
@@ -196,17 +195,17 @@ describe('Smoke test', function() {
         });
     });
 
-    describe('Readme example: word count', function() {
+    describe("Readme example: word count", function() {
 
 
-        it('check counts ', function(done) {
+        it("check counts ", function(done) {
 
             var sqlContext = spark([], process.env.ASSEMBLY_JAR).sqlContext;
             var lines = sqlContext.read().text(path.join(__dirname, "..", "data/words.txt"));
             var F = spark([], process.env.ASSEMBLY_JAR).sqlFunctions;
             var splits = lines.select(F.split(lines.col("value"), " ").as("words"));
             var occurrences = splits.select(F.explode(splits.col("words")).as("word"));
-            var counts = occurrences.groupBy("word").count()
+            var counts = occurrences.groupBy("word").count();
             var output = counts.where("count>10").sort(counts.col("count")).jvm_obj.showString(20, true).split("\n");
             /*
              +-----+-----+
@@ -224,7 +223,7 @@ describe('Smoke test', function() {
              */
             expect(output[3]).to.match(/.*is.*13.*/);
             expect(output[10]).to.match(/.*Spark.*27.*/);
-            done()
+            done();
         });
     });
 

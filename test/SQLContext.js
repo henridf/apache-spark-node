@@ -1,15 +1,14 @@
-var expect = require('chai').expect;
-var path = require('path');
+var expect = require("chai").expect;
 
-var spark = require('..');
+var spark = require("..");
 
-var DataFrame = require('../js/DataFrame');
-var DataFrameReader = require('../js/DataFrameReader');
+var DataFrame = require("../js/DataFrame");
+var DataFrameReader = require("../js/DataFrameReader");
 
-describe('SQLContext', function() {
+describe("SQLContext", function() {
     var sqlContext;
     this.timeout(10000);
-    it('create sqlContext', function(done) {
+    it("create sqlContext", function(done) {
         var args = ["--class", "org.apache.spark.repl.Main",
                     "shark-shell"];
 
@@ -17,20 +16,20 @@ describe('SQLContext', function() {
         done();
     });
 
-    it('emptyDataFrame() returns df with 0 rows', function(done) {
+    it("emptyDataFrame() returns df with 0 rows", function(done) {
         var df = sqlContext.emptyDataFrame();
         expect(df).to.be.an.instanceof(DataFrame);
         expect(df.count()).to.equal(0);
         done();
     });
 
-    it('read() returns a DataFrameReader', function(done) {
+    it("read() returns a DataFrameReader", function(done) {
         var read = sqlContext.read();
         expect(read).to.be.an.instanceof(DataFrameReader);
         done();
     });
 
-    it('range(3) returns a DataFrame with 0..2', function(done) {
+    it("range(3) returns a DataFrame with 0..2", function(done) {
         var df = sqlContext.range(3);
         var values = df.collect();
 
@@ -38,7 +37,7 @@ describe('SQLContext', function() {
         done();
     });
 
-    it('range(1, 4, 2) returns a DataFrame with 1,3', function(done) {
+    it("range(1, 4, 2) returns a DataFrame with 1,3", function(done) {
         var df = sqlContext.range(1, 4, 2);
         var values = df.collect();
 
@@ -46,7 +45,7 @@ describe('SQLContext', function() {
         done();
     });
 
-    it('createDataFrame([{a: 1}, {b: 2}])', function(done) {
+    it("createDataFrame([{a: 1}, {b: 2}])", function(done) {
         var df = sqlContext.createDataFrame([{a: 1}, {b: 2}]);
         var values = df.collect();
 
@@ -54,18 +53,18 @@ describe('SQLContext', function() {
         done();
     });
 
-    it('sql(..) with simple SELECT statement', function(done) {
+    it("sql(..) with simple SELECT statement", function(done) {
         var people = [{"name":"Michael"},
                       {"name":"Andy", "age":30},
                       {"name":"Justin", "age":19}];
 
         var df = sqlContext.createDataFrame(people);
         df.registerTempTable("people");
-        var values = sqlContext.sql("SELECT name FROM people WHERE age >= 13 AND age <= 19").collect()
+        var values = sqlContext.sql("SELECT name FROM people WHERE age >= 13 AND age <= 19").collect();
 
-        expect(values).to.deep.equal([['Justin']]);;
+        expect(values).to.deep.equal([["Justin"]]);
         done();
     });
 
 
-})
+});
