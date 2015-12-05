@@ -51,6 +51,12 @@ describe('Smoke test', function() {
             done();
         });
 
+        it('var df = sqlContext.createDataFrame([{"name":"Michael"}, {"name":"Andy", "age":30}, {"name":"Justin", "age": 19}])', function(done) {
+            df = sqlContext.createDataFrame([{"name":"Michael"}, {"name":"Andy", "age":30}, {"name":"Justin", "age": 19}]);
+            expect(df).to.be.an.instanceof(DataFrame);
+            done();
+        });
+
         it('df.show()', function(done) {
             var output = df.jvm_obj.showString(20, true).split("\n");
             /*
@@ -99,6 +105,12 @@ describe('Smoke test', function() {
         it('df.select("name").show()', function(done) {
             var output = df.select("name").jvm_obj.showString(20, true).split("\n");
             expect(output[5]).to.equal("| Justin|");
+            done();
+        });
+
+        it('var res = df.select("name").collect()', function(done) {
+            var res = df.select("name").collect();
+            expect(res).to.deep.equal([["Michael"], ["Andy"], ["Justin"]]);
             done();
         });
 

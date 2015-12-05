@@ -95,7 +95,11 @@ Load a dataframe from a json file:
 
     $ var df = sqlContext.read().json("./data/people.json")
 
-Print its contents to stdout:
+Load a dataframe from a list of javascript objects:
+
+    $ var df = sqlContext.createDataFrame([{"name":"Michael"}, {"name":"Andy", "age":30}, {"name":"Justin", "age": 19}])
+
+Pretty-print dataframe contents to stdout:
 
     $ df.show()
 
@@ -122,6 +126,11 @@ Select only the "name" column:
 or the shorter (equivalent) version:
 
     $ df.select("name").show()
+
+collect the result (as an array of rows) and assign it to a javascript
+variable:
+
+    $ var res = df.select("name").collect()
 
 Select everybody and increment age by 1:
 
