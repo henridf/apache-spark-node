@@ -1,0 +1,26 @@
+language: java
+
+sudo: false
+
+jdk:
+  - oraclejdk8
+
+env:
+  - NODE_VERSION=v4.2.2 CC=clang CXX=clang++ ASSEMBLY_JAR=spark-1.6.0-bin-hadoop2.6/lib/spark-assembly-1.6.0-hadoop2.6.0.jar
+
+before_install:
+  - nvm install $NODE_VERSION
+# move back to cloudfront when 1.6.0 released
+#  - curl http://d3kbcqa49mib13.cloudfront.net/spark-1.5.2-bin-hadoop2.6.tgz > ./spark-1.5.2-bin-hadoop2.6.tgz
+  - curl http://people.apache.org/~pwendell/spark-releases/spark-v1.6.0-preview2-bin/spark-1.6.0-bin-hadoop2.6.tgz > ./spark-1.6.0-bin-hadoop2.6.tgz
+  - tar xvzf ./spark-1.6.0-bin-hadoop2.6.tgz
+
+before_script:
+  - npm install
+
+script:
+  - npm test
+
+notifications:
+  email:
+    on_success: "never"

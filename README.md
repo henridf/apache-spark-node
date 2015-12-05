@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/henridf/apache-spark-node.svg?branch=master)](https://travis-ci.org/henridf/apache-spark-node)
+
 apache-spark-node
 =================
 
