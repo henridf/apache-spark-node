@@ -1,0 +1,10 @@
+{
+  "source": {
+      "include": ["lib"]
+  },
+  "opts": {
+    "destination": "./jsdoc/",
+    "template": "node_modules/minami",
+    "readme": "./README.md"
+  }
+}
