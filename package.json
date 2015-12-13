@@ -8,7 +8,7 @@
     "compile": "babel --out-dir js lib",
     "lint": "eslint index.js lib/* test/* bin/spark-node",
     "prepublish": "npm run compile",
-    "docs": "jsdoc lib/*"
+    "docs": "jsdoc -c .jsdoc.json"
   },
   "repository": {
     "type": "git",
@@ -33,6 +33,7 @@
     "chai": "^3.4.1",
     "eslint": "^1.10.1",
     "jsdoc": "^3.4.0",
+    "minami": "^1.1.1",
     "mocha": "^2.3.4"
   }
 }

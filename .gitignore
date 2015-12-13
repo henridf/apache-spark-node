@@ -2,7 +2,7 @@ node_modules
 
 js
 
-out
+jsdoc
 
 # NPM logs
 *.log
