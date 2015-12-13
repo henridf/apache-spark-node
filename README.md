@@ -1,19 +1,30 @@
 [![Build Status](https://travis-ci.org/henridf/apache-spark-node.svg?branch=master)](https://travis-ci.org/henridf/apache-spark-node)
 
-apache-spark-node
-=================
+Apache Spark <=> Node.js
+========================
 
 Node.js bindings for Apache Spark.
 
+**Table of Contents**
 
-*Work in progress:* This project is already usable in its present form, but it is still pretty early
-on. Notably not yet implemented are:
+- [Status](#status)
+- [Getting Started](#getting-started)
+- [Usage](#usage)
+- [Examples](#examples)
+- [Misc notes](#misc-notes)
+
+
+Status
+------
+
+This project is already usable in its present form, but it is still in early
+stages and under development. APIs may change. Notably not yet implemented
+are:
 
 - support for user-defined functions
 - jvm-side helpers to for functions/methods which cannot currently be called
-  from node (because they take parameters types like `Seq`)
+  from node (for example because they take parameters types like `Seq`)
 
-APIs are still likely to change.
 
 
 Getting started
