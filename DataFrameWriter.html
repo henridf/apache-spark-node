@@ -1,0 +1,921 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>DataFrameWriter - Documentation</title>
+
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="Column.html">Column</a><ul class='methods'><li data-type='method'><a href="Column.html#alias">alias</a></li><li data-type='method'><a href="Column.html#and">and</a></li><li data-type='method'><a href="Column.html#as">as</a></li><li data-type='method'><a href="Column.html#asc">asc</a></li><li data-type='method'><a href="Column.html#between">between</a></li><li data-type='method'><a href="Column.html#bitwiseAND">bitwiseAND</a></li><li data-type='method'><a href="Column.html#bitwiseOR">bitwiseOR</a></li><li data-type='method'><a href="Column.html#bitwiseXOR">bitwiseXOR</a></li><li data-type='method'><a href="Column.html#cast">cast</a></li><li data-type='method'><a href="Column.html#contains">contains</a></li><li data-type='method'><a href="Column.html#desc">desc</a></li><li data-type='method'><a href="Column.html#divide">divide</a></li><li data-type='method'><a href="Column.html#endsWith">endsWith</a></li><li data-type='method'><a href="Column.html#eqNullSafe">eqNullSafe</a></li><li data-type='method'><a href="Column.html#equalTo">equalTo</a></li><li data-type='method'><a href="Column.html#explain">explain</a></li><li data-type='method'><a href="Column.html#geq">geq</a></li><li data-type='method'><a href="Column.html#getField">getField</a></li><li data-type='method'><a href="Column.html#getItem">getItem</a></li><li data-type='method'><a href="Column.html#gt">gt</a></li><li data-type='method'><a href="Column.html#isin">isin</a></li><li data-type='method'><a href="Column.html#isNaN">isNaN</a></li><li data-type='method'><a href="Column.html#isNotNull">isNotNull</a></li><li data-type='method'><a href="Column.html#isNull">isNull</a></li><li data-type='method'><a href="Column.html#leq">leq</a></li><li data-type='method'><a href="Column.html#like">like</a></li><li data-type='method'><a href="Column.html#lt">lt</a></li><li data-type='method'><a href="Column.html#minus">minus</a></li><li data-type='method'><a href="Column.html#mod">mod</a></li><li data-type='method'><a href="Column.html#multiply">multiply</a></li><li data-type='method'><a href="Column.html#or">or</a></li><li data-type='method'><a href="Column.html#otherwise">otherwise</a></li><li data-type='method'><a href="Column.html#plus">plus</a></li><li data-type='method'><a href="Column.html#rlike">rlike</a></li><li data-type='method'><a href="Column.html#startsWith">startsWith</a></li><li data-type='method'><a href="Column.html#substr">substr</a></li></ul></li><li><a href="DataFrame.html">DataFrame</a><ul class='methods'><li data-type='method'><a href="DataFrame.html#agg">agg</a></li><li data-type='method'><a href="DataFrame.html#col">col</a></li><li data-type='method'><a href="DataFrame.html#collect">collect</a></li><li data-type='method'><a href="DataFrame.html#columns">columns</a></li><li data-type='method'><a href="DataFrame.html#count">count</a></li><li data-type='method'><a href="DataFrame.html#cube">cube</a></li><li data-type='method'><a href="DataFrame.html#describe">describe</a></li><li data-type='method'><a href="DataFrame.html#distinct">distinct</a></li><li data-type='method'><a href="DataFrame.html#drop">drop</a></li><li data-type='method'><a href="DataFrame.html#dropDuplicates">dropDuplicates</a></li><li data-type='method'><a href="DataFrame.html#except">except</a></li><li data-type='method'><a href="DataFrame.html#explain">explain</a></li><li data-type='method'><a href="DataFrame.html#filter">filter</a></li><li data-type='method'><a href="DataFrame.html#groupBy">groupBy</a></li><li data-type='method'><a href="DataFrame.html#head">head</a></li><li data-type='method'><a href="DataFrame.html#intersect">intersect</a></li><li data-type='method'><a href="DataFrame.html#isLocal">isLocal</a></li><li data-type='method'><a href="DataFrame.html#join">join</a></li><li data-type='method'><a href="DataFrame.html#limit">limit</a></li><li data-type='method'><a href="DataFrame.html#printSchema">printSchema</a></li><li data-type='method'><a href="DataFrame.html#randomSplit">randomSplit</a></li><li data-type='method'><a href="DataFrame.html#registerTempTable">registerTempTable</a></li><li data-type='method'><a href="DataFrame.html#repartition">repartition</a></li><li data-type='method'><a href="DataFrame.html#rollup">rollup</a></li><li data-type='method'><a href="DataFrame.html#sample">sample</a></li><li data-type='method'><a href="DataFrame.html#select">select</a></li><li data-type='method'><a href="DataFrame.html#selectExpr">selectExpr</a></li><li data-type='method'><a href="DataFrame.html#show">show</a></li><li data-type='method'><a href="DataFrame.html#sort">sort</a></li><li data-type='method'><a href="DataFrame.html#toDF">toDF</a></li><li data-type='method'><a href="DataFrame.html#unionAll">unionAll</a></li><li data-type='method'><a href="DataFrame.html#where">where</a></li><li data-type='method'><a href="DataFrame.html#withColumn">withColumn</a></li><li data-type='method'><a href="DataFrame.html#write">write</a></li></ul></li><li><a href="DataFrameReader.html">DataFrameReader</a><ul class='methods'><li data-type='method'><a href="DataFrameReader.html#json">json</a></li><li data-type='method'><a href="DataFrameReader.html#option">option</a></li><li data-type='method'><a href="DataFrameReader.html#text">text</a></li></ul></li><li><a href="DataFrameWriter.html">DataFrameWriter</a><ul class='methods'><li data-type='method'><a href="DataFrameWriter.html#insertInto">insertInto</a></li><li data-type='method'><a href="DataFrameWriter.html#json">json</a></li><li data-type='method'><a href="DataFrameWriter.html#mode">mode</a></li><li data-type='method'><a href="DataFrameWriter.html#option">option</a></li><li data-type='method'><a href="DataFrameWriter.html#saveAsTable">saveAsTable</a></li><li data-type='method'><a href="DataFrameWriter.html#text">text</a></li></ul></li><li><a href="Functions.html">Functions</a><ul class='methods'><li data-type='method'><a href="Functions.html#.abs">abs</a></li><li data-type='method'><a href="Functions.html#.acos">acos</a></li><li data-type='method'><a href="Functions.html#.add_months">add_months</a></li><li data-type='method'><a href="Functions.html#.approxCountDistinct">approxCountDistinct</a></li><li data-type='method'><a href="Functions.html#.array">array</a></li><li data-type='method'><a href="Functions.html#.array_contains">array_contains</a></li><li data-type='method'><a href="Functions.html#.asc">asc</a></li><li data-type='method'><a href="Functions.html#.ascii">ascii</a></li><li data-type='method'><a href="Functions.html#.asin">asin</a></li><li data-type='method'><a href="Functions.html#.atan">atan</a></li><li data-type='method'><a href="Functions.html#.atan2">atan2</a></li><li data-type='method'><a href="Functions.html#.avg">avg</a></li><li data-type='method'><a href="Functions.html#.base64">base64</a></li><li data-type='method'><a href="Functions.html#.bin">bin</a></li><li data-type='method'><a href="Functions.html#.bitwiseNOT">bitwiseNOT</a></li><li data-type='method'><a href="Functions.html#.broadcast">broadcast</a></li><li data-type='method'><a href="Functions.html#.cbrt">cbrt</a></li><li data-type='method'><a href="Functions.html#.ceil">ceil</a></li><li data-type='method'><a href="Functions.html#.coalesce">coalesce</a></li><li data-type='method'><a href="Functions.html#.col">col</a></li><li data-type='method'><a href="Functions.html#.collect_list">collect_list</a></li><li data-type='method'><a href="Functions.html#.collect_set">collect_set</a></li><li data-type='method'><a href="Functions.html#.column">column</a></li><li data-type='method'><a href="Functions.html#.concat">concat</a></li><li data-type='method'><a href="Functions.html#.concat_ws">concat_ws</a></li><li data-type='method'><a href="Functions.html#.conv">conv</a></li><li data-type='method'><a href="Functions.html#.corr">corr</a></li><li data-type='method'><a href="Functions.html#.cos">cos</a></li><li data-type='method'><a href="Functions.html#.cosh">cosh</a></li><li data-type='method'><a href="Functions.html#.count">count</a></li><li data-type='method'><a href="Functions.html#.countDistinct">countDistinct</a></li><li data-type='method'><a href="Functions.html#.crc32">crc32</a></li><li data-type='method'><a href="Functions.html#.cumeDist">cumeDist</a></li><li data-type='method'><a href="Functions.html#.current_date">current_date</a></li><li data-type='method'><a href="Functions.html#.current_timestamp">current_timestamp</a></li><li data-type='method'><a href="Functions.html#.date_add">date_add</a></li><li data-type='method'><a href="Functions.html#.date_format">date_format</a></li><li data-type='method'><a href="Functions.html#.date_sub">date_sub</a></li><li data-type='method'><a href="Functions.html#.datediff">datediff</a></li><li data-type='method'><a href="Functions.html#.dayofmonth">dayofmonth</a></li><li data-type='method'><a href="Functions.html#.dayofyear">dayofyear</a></li><li data-type='method'><a href="Functions.html#.decode">decode</a></li><li data-type='method'><a href="Functions.html#.denseRank">denseRank</a></li><li data-type='method'><a href="Functions.html#.desc">desc</a></li><li data-type='method'><a href="Functions.html#.encode">encode</a></li><li data-type='method'><a href="Functions.html#.exp">exp</a></li><li data-type='method'><a href="Functions.html#.explode">explode</a></li><li data-type='method'><a href="Functions.html#.expm1">expm1</a></li><li data-type='method'><a href="Functions.html#.expr">expr</a></li><li data-type='method'><a href="Functions.html#.factorial">factorial</a></li><li data-type='method'><a href="Functions.html#.first">first</a></li><li data-type='method'><a href="Functions.html#.floor">floor</a></li><li data-type='method'><a href="Functions.html#.format_number">format_number</a></li><li data-type='method'><a href="Functions.html#.format_string">format_string</a></li><li data-type='method'><a href="Functions.html#.from_unixtime">from_unixtime</a></li><li data-type='method'><a href="Functions.html#.from_utc_timestamp">from_utc_timestamp</a></li><li data-type='method'><a href="Functions.html#.greatest">greatest</a></li><li data-type='method'><a href="Functions.html#.hex">hex</a></li><li data-type='method'><a href="Functions.html#.hour">hour</a></li><li data-type='method'><a href="Functions.html#.hypot">hypot</a></li><li data-type='method'><a href="Functions.html#.initcap">initcap</a></li><li data-type='method'><a href="Functions.html#.inputFileName">inputFileName</a></li><li data-type='method'><a href="Functions.html#.instr">instr</a></li><li data-type='method'><a href="Functions.html#.isNaN">isNaN</a></li><li data-type='method'><a href="Functions.html#.json_tuple">json_tuple</a></li><li data-type='method'><a href="Functions.html#.kurtosis">kurtosis</a></li><li data-type='method'><a href="Functions.html#.lag">lag</a></li><li data-type='method'><a href="Functions.html#.last">last</a></li><li data-type='method'><a href="Functions.html#.last_day">last_day</a></li><li data-type='method'><a href="Functions.html#.lead">lead</a></li><li data-type='method'><a href="Functions.html#.least">least</a></li><li data-type='method'><a href="Functions.html#.length">length</a></li><li data-type='method'><a href="Functions.html#.levenshtein">levenshtein</a></li><li data-type='method'><a href="Functions.html#.lit">lit</a></li><li data-type='method'><a href="Functions.html#.locate">locate</a></li><li data-type='method'><a href="Functions.html#.log">log</a></li><li data-type='method'><a href="Functions.html#.log1p">log1p</a></li><li data-type='method'><a href="Functions.html#.log2">log2</a></li><li data-type='method'><a href="Functions.html#.log10">log10</a></li><li data-type='method'><a href="Functions.html#.lower">lower</a></li><li data-type='method'><a href="Functions.html#.lpad">lpad</a></li><li data-type='method'><a href="Functions.html#.ltrim">ltrim</a></li><li data-type='method'><a href="Functions.html#.max">max</a></li><li data-type='method'><a href="Functions.html#.md5">md5</a></li><li data-type='method'><a href="Functions.html#.mean">mean</a></li><li data-type='method'><a href="Functions.html#.min">min</a></li><li data-type='method'><a href="Functions.html#.minute">minute</a></li><li data-type='method'><a href="Functions.html#.monotonicallyIncreasingId">monotonicallyIncreasingId</a></li><li data-type='method'><a href="Functions.html#.month">month</a></li><li data-type='method'><a href="Functions.html#.months_between">months_between</a></li><li data-type='method'><a href="Functions.html#.nanvl">nanvl</a></li><li data-type='method'><a href="Functions.html#.negate">negate</a></li><li data-type='method'><a href="Functions.html#.next_day">next_day</a></li><li data-type='method'><a href="Functions.html#.not">not</a></li><li data-type='method'><a href="Functions.html#.ntile">ntile</a></li><li data-type='method'><a href="Functions.html#.percentRank">percentRank</a></li><li data-type='method'><a href="Functions.html#.pmod">pmod</a></li><li data-type='method'><a href="Functions.html#.pow">pow</a></li><li data-type='method'><a href="Functions.html#.quarter">quarter</a></li><li data-type='method'><a href="Functions.html#.rand">rand</a></li><li data-type='method'><a href="Functions.html#.randn">randn</a></li><li data-type='method'><a href="Functions.html#.rank">rank</a></li><li data-type='method'><a href="Functions.html#.regexp_extract">regexp_extract</a></li><li data-type='method'><a href="Functions.html#.regexp_replace">regexp_replace</a></li><li data-type='method'><a href="Functions.html#.repeat">repeat</a></li><li data-type='method'><a href="Functions.html#.reverse">reverse</a></li><li data-type='method'><a href="Functions.html#.rint">rint</a></li><li data-type='method'><a href="Functions.html#.round">round</a></li><li data-type='method'><a href="Functions.html#.rowNumber">rowNumber</a></li><li data-type='method'><a href="Functions.html#.rpad">rpad</a></li><li data-type='method'><a href="Functions.html#.rtrim">rtrim</a></li><li data-type='method'><a href="Functions.html#.second">second</a></li><li data-type='method'><a href="Functions.html#.sha1">sha1</a></li><li data-type='method'><a href="Functions.html#.sha2">sha2</a></li><li data-type='method'><a href="Functions.html#.shiftLeft">shiftLeft</a></li><li data-type='method'><a href="Functions.html#.shiftRight">shiftRight</a></li><li data-type='method'><a href="Functions.html#.shiftRightUnsigned">shiftRightUnsigned</a></li><li data-type='method'><a href="Functions.html#.signum">signum</a></li><li data-type='method'><a href="Functions.html#.sin">sin</a></li><li data-type='method'><a href="Functions.html#.sinh">sinh</a></li><li data-type='method'><a href="Functions.html#.size">size</a></li><li data-type='method'><a href="Functions.html#.skewness">skewness</a></li><li data-type='method'><a href="Functions.html#.sort_array">sort_array</a></li><li data-type='method'><a href="Functions.html#.soundex">soundex</a></li><li data-type='method'><a href="Functions.html#.sparkPartitionId">sparkPartitionId</a></li><li data-type='method'><a href="Functions.html#.split">split</a></li><li data-type='method'><a href="Functions.html#.sqrt">sqrt</a></li><li data-type='method'><a href="Functions.html#.stddev">stddev</a></li><li data-type='method'><a href="Functions.html#.stddev_pop">stddev_pop</a></li><li data-type='method'><a href="Functions.html#.stddev_samp">stddev_samp</a></li><li data-type='method'><a href="Functions.html#.struct">struct</a></li><li data-type='method'><a href="Functions.html#.substring">substring</a></li><li data-type='method'><a href="Functions.html#.substring_index">substring_index</a></li><li data-type='method'><a href="Functions.html#.sum">sum</a></li><li data-type='method'><a href="Functions.html#.sumDistinct">sumDistinct</a></li><li data-type='method'><a href="Functions.html#.tan">tan</a></li><li data-type='method'><a href="Functions.html#.tanh">tanh</a></li><li data-type='method'><a href="Functions.html#.to_date">to_date</a></li><li data-type='method'><a href="Functions.html#.to_utc_timestamp">to_utc_timestamp</a></li><li data-type='method'><a href="Functions.html#.toDegrees">toDegrees</a></li><li data-type='method'><a href="Functions.html#.toRadians">toRadians</a></li><li data-type='method'><a href="Functions.html#.translate">translate</a></li><li data-type='method'><a href="Functions.html#.trim">trim</a></li><li data-type='method'><a href="Functions.html#.trunc">trunc</a></li><li data-type='method'><a href="Functions.html#.unbase64">unbase64</a></li><li data-type='method'><a href="Functions.html#.unhex">unhex</a></li><li data-type='method'><a href="Functions.html#.unix_timestamp">unix_timestamp</a></li><li data-type='method'><a href="Functions.html#.upper">upper</a></li><li data-type='method'><a href="Functions.html#.var_pop">var_pop</a></li><li data-type='method'><a href="Functions.html#.var_samp">var_samp</a></li><li data-type='method'><a href="Functions.html#.variance">variance</a></li><li data-type='method'><a href="Functions.html#.weekofyear">weekofyear</a></li><li data-type='method'><a href="Functions.html#.when">when</a></li><li data-type='method'><a href="Functions.html#.year">year</a></li></ul></li><li><a href="GroupedData.html">GroupedData</a><ul class='methods'><li data-type='method'><a href="GroupedData.html#agg">agg</a></li><li data-type='method'><a href="GroupedData.html#avg">avg</a></li><li data-type='method'><a href="GroupedData.html#count">count</a></li><li data-type='method'><a href="GroupedData.html#max">max</a></li><li data-type='method'><a href="GroupedData.html#mean">mean</a></li><li data-type='method'><a href="GroupedData.html#min">min</a></li><li data-type='method'><a href="GroupedData.html#sum">sum</a></li></ul></li><li><a href="SQLContext.html">SQLContext</a><ul class='methods'><li data-type='method'><a href="SQLContext.html#createDataFrame">createDataFrame</a></li><li data-type='method'><a href="SQLContext.html#emptyDataFrame">emptyDataFrame</a></li><li data-type='method'><a href="SQLContext.html#range">range</a></li><li data-type='method'><a href="SQLContext.html#read">read</a></li><li data-type='method'><a href="SQLContext.html#sql">sql</a></li></ul></li></ul><h3>Global</h3><ul><li><a href="global.html#sqlContext">sqlContext</a></li><li><a href="global.html#sqlFunctions">sqlFunctions</a></li></ul>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">DataFrameWriter</h1>
+    
+
+    
+
+
+
+
+<section>
+
+<header>
+    
+        <h2>
+        DataFrameWriter
+        </h2>
+        
+            <div class="class-description"><p>Interface used to write a <a href="DataFrame.html">DataFrame</a> to external storage systems
+(e.g. file systems, key-value stores, etc). Use <a href="DataFrame.html#write">DataFrame#write</a> to
+access instances of this class.</p></div>
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+
+    
+    <h2>Constructor</h2>
+    
+
+    <h4 class="name" id="DataFrameWriter"><span class="type-signature"></span>new DataFrameWriter<span class="signature">()</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    <p><strong>Note:</strong> Do not use directly (see above).</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+    <dt class="tag-since">Since:</dt>
+    <dd class="tag-since"><ul class="dummy"><li>1.4.0</li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="DataFrameWriter.js.html">DataFrameWriter.js</a>, <a href="DataFrameWriter.js.html#line11">line 11</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    </div>
+
+    
+
+    
+
+    
+
+     
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        
+            
+
+    
+
+    <h4 class="name" id="insertInto"><span class="type-signature"></span>insertInto<span class="signature">(tableName)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    <p>Inserts the content of the <a href="DataFrame.html">DataFrame</a> to the specified table. It
+requires that the schema of the <a href="DataFrame.html">DataFrame</a> is the same as the schema
+of the table.</p>
+<p>Because it inserts data to an existing table, format or options will be
+ignored.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>tableName</code></td>
+            
+
+            <td class="type">
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+    <dt class="tag-since">Since:</dt>
+    <dd class="tag-since"><ul class="dummy"><li>1.4.0</li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="DataFrameWriter.js.html">DataFrameWriter.js</a>, <a href="DataFrameWriter.js.html#line109">line 109</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="json"><span class="type-signature"></span>json<span class="signature">()</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    <p>Saves the content of the <a href="DataFrame.html">DataFrame</a> in JSON format at the specified
+path.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+    <dt class="tag-since">Since:</dt>
+    <dd class="tag-since"><ul class="dummy"><li>1.4.0</li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="DataFrameWriter.js.html">DataFrameWriter.js</a>, <a href="DataFrameWriter.js.html#line168">line 168</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="mode"><span class="type-signature"></span>mode<span class="signature">(saveMode)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    <p>Specifies the behavior when data or table already exists. Options
+include:</p>
+<ul>
+<li><code>&quot;overwrite&quot;</code>: overwrite the existing data.</li>
+<li><code>&quot;append&quot;</code>: append the data.</li>
+<li><code>&quot;ignore&quot;</code>: ignore the operation (i.e. no-op).</li>
+<li><code>&quot;error&quot;</code>: default option, throw an exception at runtime.</li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>saveMode</code></td>
+            
+
+            <td class="type">
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+    <dt class="tag-since">Since:</dt>
+    <dd class="tag-since"><ul class="dummy"><li>1.4.0</li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="DataFrameWriter.js.html">DataFrameWriter.js</a>, <a href="DataFrameWriter.js.html#line32">line 32</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="option"><span class="type-signature"></span>option<span class="signature">(key, value)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    <p>Adds an input option for the underlying data source.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>key</code></td>
+            
+
+            <td class="type">
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>value</code></td>
+            
+
+            <td class="type">
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+    <dt class="tag-since">Since:</dt>
+    <dd class="tag-since"><ul class="dummy"><li>1.4.0</li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="DataFrameWriter.js.html">DataFrameWriter.js</a>, <a href="DataFrameWriter.js.html#line56">line 56</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="saveAsTable"><span class="type-signature"></span>saveAsTable<span class="signature">(tableName)</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    <p>Saves the content of the <a href="DataFrame.html">DataFrame</a> as the specified table.</p>
+<p>In the case the table already exists, behavior of this function depends
+on the save mode, specified by the <code>mode</code> function (default to throwing
+an exception).  When <code>mode</code> is <code>Overwrite</code>, the schema of the
+<a href="DataFrame.html">DataFrame</a> does not need to be the same as that of the existing table.
+When <code>mode</code> is <code>Append</code>, the schema of the <a href="DataFrame.html">DataFrame</a> need to be the
+same as that of the existing table, and format or options will be
+ignored.</p>
+<p>When the DataFrame is created from a non-partitioned HadoopFsRelation
+with a single input path, and the data source provider can be mapped to
+an existing Hive builtin SerDe (i.e. ORC and Parquet), the table is
+persisted in a Hive compatible format, which means other systems like
+Hive will be able to read this table. Otherwise, the table is persisted
+in a Spark SQL specific format.</p>
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>tableName</code></td>
+            
+
+            <td class="type">
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+    <dt class="tag-since">Since:</dt>
+    <dd class="tag-since"><ul class="dummy"><li>1.4.0</li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="DataFrameWriter.js.html">DataFrameWriter.js</a>, <a href="DataFrameWriter.js.html#line134">line 134</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="text"><span class="type-signature"></span>text<span class="signature">()</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+<div class="description">
+    <p>Saves the content of the <a href="DataFrame.html">DataFrame</a> in a text file at the specified
+path.  The DataFrame must have only one column that is of string type.
+Each row becomes a new line in the output file.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+    <dt class="tag-since">Since:</dt>
+    <dd class="tag-since"><ul class="dummy"><li>1.6.0</li></ul></dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="DataFrameWriter.js.html">DataFrameWriter.js</a>, <a href="DataFrameWriter.js.html#line182">line 182</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Example</h5>
+    
+    <pre class="prettyprint"><code>df.write().text("/path/to/output")</code></pre>
+
+
+
+        
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.0</a> on Thu Dec 17 2015 13:24:15 GMT-0800 (PST) using the Minami theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/linenumber.js"></script>
+</body>
+</html>

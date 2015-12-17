@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>DataFrame.js - Documentation</title>
+
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="Column.html">Column</a><ul class='methods'><li data-type='method'><a href="Column.html#alias">alias</a></li><li data-type='method'><a href="Column.html#and">and</a></li><li data-type='method'><a href="Column.html#as">as</a></li><li data-type='method'><a href="Column.html#asc">asc</a></li><li data-type='method'><a href="Column.html#between">between</a></li><li data-type='method'><a href="Column.html#bitwiseAND">bitwiseAND</a></li><li data-type='method'><a href="Column.html#bitwiseOR">bitwiseOR</a></li><li data-type='method'><a href="Column.html#bitwiseXOR">bitwiseXOR</a></li><li data-type='method'><a href="Column.html#cast">cast</a></li><li data-type='method'><a href="Column.html#contains">contains</a></li><li data-type='method'><a href="Column.html#desc">desc</a></li><li data-type='method'><a href="Column.html#divide">divide</a></li><li data-type='method'><a href="Column.html#endsWith">endsWith</a></li><li data-type='method'><a href="Column.html#eqNullSafe">eqNullSafe</a></li><li data-type='method'><a href="Column.html#equalTo">equalTo</a></li><li data-type='method'><a href="Column.html#explain">explain</a></li><li data-type='method'><a href="Column.html#geq">geq</a></li><li data-type='method'><a href="Column.html#getField">getField</a></li><li data-type='method'><a href="Column.html#getItem">getItem</a></li><li data-type='method'><a href="Column.html#gt">gt</a></li><li data-type='method'><a href="Column.html#isin">isin</a></li><li data-type='method'><a href="Column.html#isNaN">isNaN</a></li><li data-type='method'><a href="Column.html#isNotNull">isNotNull</a></li><li data-type='method'><a href="Column.html#isNull">isNull</a></li><li data-type='method'><a href="Column.html#leq">leq</a></li><li data-type='method'><a href="Column.html#like">like</a></li><li data-type='method'><a href="Column.html#lt">lt</a></li><li data-type='method'><a href="Column.html#minus">minus</a></li><li data-type='method'><a href="Column.html#mod">mod</a></li><li data-type='method'><a href="Column.html#multiply">multiply</a></li><li data-type='method'><a href="Column.html#or">or</a></li><li data-type='method'><a href="Column.html#otherwise">otherwise</a></li><li data-type='method'><a href="Column.html#plus">plus</a></li><li data-type='method'><a href="Column.html#rlike">rlike</a></li><li data-type='method'><a href="Column.html#startsWith">startsWith</a></li><li data-type='method'><a href="Column.html#substr">substr</a></li></ul></li><li><a href="DataFrame.html">DataFrame</a><ul class='methods'><li data-type='method'><a href="DataFrame.html#agg">agg</a></li><li data-type='method'><a href="DataFrame.html#col">col</a></li><li data-type='method'><a href="DataFrame.html#collect">collect</a></li><li data-type='method'><a href="DataFrame.html#columns">columns</a></li><li data-type='method'><a href="DataFrame.html#count">count</a></li><li data-type='method'><a href="DataFrame.html#cube">cube</a></li><li data-type='method'><a href="DataFrame.html#describe">describe</a></li><li data-type='method'><a href="DataFrame.html#distinct">distinct</a></li><li data-type='method'><a href="DataFrame.html#drop">drop</a></li><li data-type='method'><a href="DataFrame.html#dropDuplicates">dropDuplicates</a></li><li data-type='method'><a href="DataFrame.html#except">except</a></li><li data-type='method'><a href="DataFrame.html#explain">explain</a></li><li data-type='method'><a href="DataFrame.html#filter">filter</a></li><li data-type='method'><a href="DataFrame.html#groupBy">groupBy</a></li><li data-type='method'><a href="DataFrame.html#head">head</a></li><li data-type='method'><a href="DataFrame.html#intersect">intersect</a></li><li data-type='method'><a href="DataFrame.html#isLocal">isLocal</a></li><li data-type='method'><a href="DataFrame.html#join">join</a></li><li data-type='method'><a href="DataFrame.html#limit">limit</a></li><li data-type='method'><a href="DataFrame.html#printSchema">printSchema</a></li><li data-type='method'><a href="DataFrame.html#randomSplit">randomSplit</a></li><li data-type='method'><a href="DataFrame.html#registerTempTable">registerTempTable</a></li><li data-type='method'><a href="DataFrame.html#repartition">repartition</a></li><li data-type='method'><a href="DataFrame.html#rollup">rollup</a></li><li data-type='method'><a href="DataFrame.html#sample">sample</a></li><li data-type='method'><a href="DataFrame.html#select">select</a></li><li data-type='method'><a href="DataFrame.html#selectExpr">selectExpr</a></li><li data-type='method'><a href="DataFrame.html#show">show</a></li><li data-type='method'><a href="DataFrame.html#sort">sort</a></li><li data-type='method'><a href="DataFrame.html#toDF">toDF</a></li><li data-type='method'><a href="DataFrame.html#unionAll">unionAll</a></li><li data-type='method'><a href="DataFrame.html#where">where</a></li><li data-type='method'><a href="DataFrame.html#withColumn">withColumn</a></li><li data-type='method'><a href="DataFrame.html#write">write</a></li></ul></li><li><a href="DataFrameReader.html">DataFrameReader</a><ul class='methods'><li data-type='method'><a href="DataFrameReader.html#json">json</a></li><li data-type='method'><a href="DataFrameReader.html#option">option</a></li><li data-type='method'><a href="DataFrameReader.html#text">text</a></li></ul></li><li><a href="DataFrameWriter.html">DataFrameWriter</a><ul class='methods'><li data-type='method'><a href="DataFrameWriter.html#insertInto">insertInto</a></li><li data-type='method'><a href="DataFrameWriter.html#json">json</a></li><li data-type='method'><a href="DataFrameWriter.html#mode">mode</a></li><li data-type='method'><a href="DataFrameWriter.html#option">option</a></li><li data-type='method'><a href="DataFrameWriter.html#saveAsTable">saveAsTable</a></li><li data-type='method'><a href="DataFrameWriter.html#text">text</a></li></ul></li><li><a href="Functions.html">Functions</a><ul class='methods'><li data-type='method'><a href="Functions.html#.abs">abs</a></li><li data-type='method'><a href="Functions.html#.acos">acos</a></li><li data-type='method'><a href="Functions.html#.add_months">add_months</a></li><li data-type='method'><a href="Functions.html#.approxCountDistinct">approxCountDistinct</a></li><li data-type='method'><a href="Functions.html#.array">array</a></li><li data-type='method'><a href="Functions.html#.array_contains">array_contains</a></li><li data-type='method'><a href="Functions.html#.asc">asc</a></li><li data-type='method'><a href="Functions.html#.ascii">ascii</a></li><li data-type='method'><a href="Functions.html#.asin">asin</a></li><li data-type='method'><a href="Functions.html#.atan">atan</a></li><li data-type='method'><a href="Functions.html#.atan2">atan2</a></li><li data-type='method'><a href="Functions.html#.avg">avg</a></li><li data-type='method'><a href="Functions.html#.base64">base64</a></li><li data-type='method'><a href="Functions.html#.bin">bin</a></li><li data-type='method'><a href="Functions.html#.bitwiseNOT">bitwiseNOT</a></li><li data-type='method'><a href="Functions.html#.broadcast">broadcast</a></li><li data-type='method'><a href="Functions.html#.cbrt">cbrt</a></li><li data-type='method'><a href="Functions.html#.ceil">ceil</a></li><li data-type='method'><a href="Functions.html#.coalesce">coalesce</a></li><li data-type='method'><a href="Functions.html#.col">col</a></li><li data-type='method'><a href="Functions.html#.collect_list">collect_list</a></li><li data-type='method'><a href="Functions.html#.collect_set">collect_set</a></li><li data-type='method'><a href="Functions.html#.column">column</a></li><li data-type='method'><a href="Functions.html#.concat">concat</a></li><li data-type='method'><a href="Functions.html#.concat_ws">concat_ws</a></li><li data-type='method'><a href="Functions.html#.conv">conv</a></li><li data-type='method'><a href="Functions.html#.corr">corr</a></li><li data-type='method'><a href="Functions.html#.cos">cos</a></li><li data-type='method'><a href="Functions.html#.cosh">cosh</a></li><li data-type='method'><a href="Functions.html#.count">count</a></li><li data-type='method'><a href="Functions.html#.countDistinct">countDistinct</a></li><li data-type='method'><a href="Functions.html#.crc32">crc32</a></li><li data-type='method'><a href="Functions.html#.cumeDist">cumeDist</a></li><li data-type='method'><a href="Functions.html#.current_date">current_date</a></li><li data-type='method'><a href="Functions.html#.current_timestamp">current_timestamp</a></li><li data-type='method'><a href="Functions.html#.date_add">date_add</a></li><li data-type='method'><a href="Functions.html#.date_format">date_format</a></li><li data-type='method'><a href="Functions.html#.date_sub">date_sub</a></li><li data-type='method'><a href="Functions.html#.datediff">datediff</a></li><li data-type='method'><a href="Functions.html#.dayofmonth">dayofmonth</a></li><li data-type='method'><a href="Functions.html#.dayofyear">dayofyear</a></li><li data-type='method'><a href="Functions.html#.decode">decode</a></li><li data-type='method'><a href="Functions.html#.denseRank">denseRank</a></li><li data-type='method'><a href="Functions.html#.desc">desc</a></li><li data-type='method'><a href="Functions.html#.encode">encode</a></li><li data-type='method'><a href="Functions.html#.exp">exp</a></li><li data-type='method'><a href="Functions.html#.explode">explode</a></li><li data-type='method'><a href="Functions.html#.expm1">expm1</a></li><li data-type='method'><a href="Functions.html#.expr">expr</a></li><li data-type='method'><a href="Functions.html#.factorial">factorial</a></li><li data-type='method'><a href="Functions.html#.first">first</a></li><li data-type='method'><a href="Functions.html#.floor">floor</a></li><li data-type='method'><a href="Functions.html#.format_number">format_number</a></li><li data-type='method'><a href="Functions.html#.format_string">format_string</a></li><li data-type='method'><a href="Functions.html#.from_unixtime">from_unixtime</a></li><li data-type='method'><a href="Functions.html#.from_utc_timestamp">from_utc_timestamp</a></li><li data-type='method'><a href="Functions.html#.greatest">greatest</a></li><li data-type='method'><a href="Functions.html#.hex">hex</a></li><li data-type='method'><a href="Functions.html#.hour">hour</a></li><li data-type='method'><a href="Functions.html#.hypot">hypot</a></li><li data-type='method'><a href="Functions.html#.initcap">initcap</a></li><li data-type='method'><a href="Functions.html#.inputFileName">inputFileName</a></li><li data-type='method'><a href="Functions.html#.instr">instr</a></li><li data-type='method'><a href="Functions.html#.isNaN">isNaN</a></li><li data-type='method'><a href="Functions.html#.json_tuple">json_tuple</a></li><li data-type='method'><a href="Functions.html#.kurtosis">kurtosis</a></li><li data-type='method'><a href="Functions.html#.lag">lag</a></li><li data-type='method'><a href="Functions.html#.last">last</a></li><li data-type='method'><a href="Functions.html#.last_day">last_day</a></li><li data-type='method'><a href="Functions.html#.lead">lead</a></li><li data-type='method'><a href="Functions.html#.least">least</a></li><li data-type='method'><a href="Functions.html#.length">length</a></li><li data-type='method'><a href="Functions.html#.levenshtein">levenshtein</a></li><li data-type='method'><a href="Functions.html#.lit">lit</a></li><li data-type='method'><a href="Functions.html#.locate">locate</a></li><li data-type='method'><a href="Functions.html#.log">log</a></li><li data-type='method'><a href="Functions.html#.log1p">log1p</a></li><li data-type='method'><a href="Functions.html#.log2">log2</a></li><li data-type='method'><a href="Functions.html#.log10">log10</a></li><li data-type='method'><a href="Functions.html#.lower">lower</a></li><li data-type='method'><a href="Functions.html#.lpad">lpad</a></li><li data-type='method'><a href="Functions.html#.ltrim">ltrim</a></li><li data-type='method'><a href="Functions.html#.max">max</a></li><li data-type='method'><a href="Functions.html#.md5">md5</a></li><li data-type='method'><a href="Functions.html#.mean">mean</a></li><li data-type='method'><a href="Functions.html#.min">min</a></li><li data-type='method'><a href="Functions.html#.minute">minute</a></li><li data-type='method'><a href="Functions.html#.monotonicallyIncreasingId">monotonicallyIncreasingId</a></li><li data-type='method'><a href="Functions.html#.month">month</a></li><li data-type='method'><a href="Functions.html#.months_between">months_between</a></li><li data-type='method'><a href="Functions.html#.nanvl">nanvl</a></li><li data-type='method'><a href="Functions.html#.negate">negate</a></li><li data-type='method'><a href="Functions.html#.next_day">next_day</a></li><li data-type='method'><a href="Functions.html#.not">not</a></li><li data-type='method'><a href="Functions.html#.ntile">ntile</a></li><li data-type='method'><a href="Functions.html#.percentRank">percentRank</a></li><li data-type='method'><a href="Functions.html#.pmod">pmod</a></li><li data-type='method'><a href="Functions.html#.pow">pow</a></li><li data-type='method'><a href="Functions.html#.quarter">quarter</a></li><li data-type='method'><a href="Functions.html#.rand">rand</a></li><li data-type='method'><a href="Functions.html#.randn">randn</a></li><li data-type='method'><a href="Functions.html#.rank">rank</a></li><li data-type='method'><a href="Functions.html#.regexp_extract">regexp_extract</a></li><li data-type='method'><a href="Functions.html#.regexp_replace">regexp_replace</a></li><li data-type='method'><a href="Functions.html#.repeat">repeat</a></li><li data-type='method'><a href="Functions.html#.reverse">reverse</a></li><li data-type='method'><a href="Functions.html#.rint">rint</a></li><li data-type='method'><a href="Functions.html#.round">round</a></li><li data-type='method'><a href="Functions.html#.rowNumber">rowNumber</a></li><li data-type='method'><a href="Functions.html#.rpad">rpad</a></li><li data-type='method'><a href="Functions.html#.rtrim">rtrim</a></li><li data-type='method'><a href="Functions.html#.second">second</a></li><li data-type='method'><a href="Functions.html#.sha1">sha1</a></li><li data-type='method'><a href="Functions.html#.sha2">sha2</a></li><li data-type='method'><a href="Functions.html#.shiftLeft">shiftLeft</a></li><li data-type='method'><a href="Functions.html#.shiftRight">shiftRight</a></li><li data-type='method'><a href="Functions.html#.shiftRightUnsigned">shiftRightUnsigned</a></li><li data-type='method'><a href="Functions.html#.signum">signum</a></li><li data-type='method'><a href="Functions.html#.sin">sin</a></li><li data-type='method'><a href="Functions.html#.sinh">sinh</a></li><li data-type='method'><a href="Functions.html#.size">size</a></li><li data-type='method'><a href="Functions.html#.skewness">skewness</a></li><li data-type='method'><a href="Functions.html#.sort_array">sort_array</a></li><li data-type='method'><a href="Functions.html#.soundex">soundex</a></li><li data-type='method'><a href="Functions.html#.sparkPartitionId">sparkPartitionId</a></li><li data-type='method'><a href="Functions.html#.split">split</a></li><li data-type='method'><a href="Functions.html#.sqrt">sqrt</a></li><li data-type='method'><a href="Functions.html#.stddev">stddev</a></li><li data-type='method'><a href="Functions.html#.stddev_pop">stddev_pop</a></li><li data-type='method'><a href="Functions.html#.stddev_samp">stddev_samp</a></li><li data-type='method'><a href="Functions.html#.struct">struct</a></li><li data-type='method'><a href="Functions.html#.substring">substring</a></li><li data-type='method'><a href="Functions.html#.substring_index">substring_index</a></li><li data-type='method'><a href="Functions.html#.sum">sum</a></li><li data-type='method'><a href="Functions.html#.sumDistinct">sumDistinct</a></li><li data-type='method'><a href="Functions.html#.tan">tan</a></li><li data-type='method'><a href="Functions.html#.tanh">tanh</a></li><li data-type='method'><a href="Functions.html#.to_date">to_date</a></li><li data-type='method'><a href="Functions.html#.to_utc_timestamp">to_utc_timestamp</a></li><li data-type='method'><a href="Functions.html#.toDegrees">toDegrees</a></li><li data-type='method'><a href="Functions.html#.toRadians">toRadians</a></li><li data-type='method'><a href="Functions.html#.translate">translate</a></li><li data-type='method'><a href="Functions.html#.trim">trim</a></li><li data-type='method'><a href="Functions.html#.trunc">trunc</a></li><li data-type='method'><a href="Functions.html#.unbase64">unbase64</a></li><li data-type='method'><a href="Functions.html#.unhex">unhex</a></li><li data-type='method'><a href="Functions.html#.unix_timestamp">unix_timestamp</a></li><li data-type='method'><a href="Functions.html#.upper">upper</a></li><li data-type='method'><a href="Functions.html#.var_pop">var_pop</a></li><li data-type='method'><a href="Functions.html#.var_samp">var_samp</a></li><li data-type='method'><a href="Functions.html#.variance">variance</a></li><li data-type='method'><a href="Functions.html#.weekofyear">weekofyear</a></li><li data-type='method'><a href="Functions.html#.when">when</a></li><li data-type='method'><a href="Functions.html#.year">year</a></li></ul></li><li><a href="GroupedData.html">GroupedData</a><ul class='methods'><li data-type='method'><a href="GroupedData.html#agg">agg</a></li><li data-type='method'><a href="GroupedData.html#avg">avg</a></li><li data-type='method'><a href="GroupedData.html#count">count</a></li><li data-type='method'><a href="GroupedData.html#max">max</a></li><li data-type='method'><a href="GroupedData.html#mean">mean</a></li><li data-type='method'><a href="GroupedData.html#min">min</a></li><li data-type='method'><a href="GroupedData.html#sum">sum</a></li></ul></li><li><a href="SQLContext.html">SQLContext</a><ul class='methods'><li data-type='method'><a href="SQLContext.html#createDataFrame">createDataFrame</a></li><li data-type='method'><a href="SQLContext.html#emptyDataFrame">emptyDataFrame</a></li><li data-type='method'><a href="SQLContext.html#range">range</a></li><li data-type='method'><a href="SQLContext.html#read">read</a></li><li data-type='method'><a href="SQLContext.html#sql">sql</a></li></ul></li></ul><h3>Global</h3><ul><li><a href="global.html#sqlContext">sqlContext</a></li><li><a href="global.html#sqlFunctions">sqlFunctions</a></li></ul>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">DataFrame.js</h1>
+    
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>"use strict";
+
+var DataFrameWriter = require("./DataFrameWriter");
+var GroupedData = require("./GroupedData");
+var Column = require("./Column");
+var Row = require("./Row");
+var java = require("./java");
+var helpers = require("./helpers");
+
+/**
+ * A distributed collection of data organized into named columns.
+ *
+ * DataFrames can be created using various functions in {@link SQLContext}.
+ * They can be manipulated using the various domain-specific-language (DSL)
+ * functions defined in: {@link DataFrame} (this class), {@link Column}, and
+ * {@link Functions}.
+ *
+ * @example &lt;caption>To select a column from the data frame, use the &lt;code>col&lt;/code> method.&lt;/caption>
+ *   var ageCol = people.col("age");
+ *
+ * @example &lt;caption>Note that the {@link Column} type can also be manipulated through its various functions.&lt;/caption>
+ *   // The following creates a new column that increases everybody's age by 10.
+ *   people.col("age").plus(10);
+ *
+ * @example &lt;caption>A more complete example.&lt;/caption>
+ *   var people = sqlContext.read().json("...");
+ *   var department = sqlContext.read().json("...");
+ *
+ *   people.filter("age > 30")
+ *     .join(department, people.col("deptId").eq(department.col("id")))
+ *     .groupBy(department.col("name"), people.col("gender"))
+ *     .agg(F.avg(people.col("salary")), F.max(people.col("age")));
+ *
+ * @since 1.3.0
+ */
+class DataFrame {
+
+    /**
+     * **Note:** Do not use directly (see above).
+     */
+    constructor(jvm_obj) {
+        this.jvm_obj = jvm_obj;
+    }
+
+    /**
+     * Returns a new {@link DataFrame} with new specified column names.
+     * @param colNames Array of new column names.
+     * @since 1.3.0
+     */
+    toDF(...colNames /*: String* */) /*: DataFrame*/ {
+        var new_jvm_obj = this.jvm_obj.toDF(...colNames);
+        return new DataFrame(new_jvm_obj);
+    }
+
+    /**
+     * Returns all column names as an array.
+     * @since 1.3.0
+     */
+    columns() /*: Array[String]*/ {
+        return this.jvm_obj.columns();
+    }
+
+    /**
+     * Prints the schema to the console in a nice tree format.
+     * @since 1.3.0
+     */
+    printSchema() /*: Unit */ {
+        this.jvm_obj.printSchema();
+    }
+
+    /**
+     * Prints the plans (logical and physical) to the console for debugging purposes.
+     * @param {string} [extended=false]
+     * @since 1.3.0
+     */
+    explain(extended=false /*: Boolean */) /*: Unit */ {
+        this.jvm_obj.explain(extended);
+    }
+
+    /**
+     * Returns true if the `collect` and `take` methods can be run locally
+     * (without any Spark executors).
+     * @since 1.3.0
+     */
+    isLocal() /*: Boolean*/ {
+        return this.jvm_obj.isLocal();
+    }
+
+    /**
+     * Displays the {@link DataFrame} in a tabular form. Strings more than 20 characters will be
+     * truncated, and all cells will be aligned right.
+     *
+     * @param {Number} [numRows=20] Number of rows to show.
+     *
+     * @param {Boolean} [truncate=true] If true, strings more than 20 characters will
+     *              be truncated and all cells will be aligned right.
+     *
+     * @since 1.3.0
+     */
+    show(numRows=20 /*: Int */, truncate=true /*: Boolean */) /*: Unit */ {
+        this.jvm_obj.show(numRows, truncate);
+    }
+
+
+    /**
+     * Join with another {@link DataFrame}.
+     *
+     * If no `col` is provided, does a Cartesian join. (Note that cartesian
+     * joins are very expensive without an extra filter that can be pushed
+     * down).
+     *
+     * If a column name (string) is provided, does an equi-join.
+     *
+     * If a column expression is provided, uses that as a join expression.
+     *
+     * @example &lt;caption>perform a full outer join between &lt;code>df1&lt;/code> and &lt;code>df2&lt;/code>&lt;/caption>
+     * df1.join(df2, col("df1Key").equalTo(col("df2Key")), "outer");
+     *
+     * @param right Right side of the join.
+     * @param [col=null] Column name or join expression.
+     * @param [joinType="inner"] One of: `inner`, `outer`, `left_outer`, `right_outer`, `leftsemi`.
+     * @since 1.3.0
+     */
+    join(right /*: DataFrame */, col=null /*: Column|String */, joinType="inner" /*: String*/) /*: DataFrame */ {
+        if (col === null) {
+            return new DataFrame(this.jvm_obj.join(right));
+        } else {
+            col = helpers.jobj_from_maybe_string(col);
+            return new DataFrame(this.jvm_obj.join(right, col, joinType));
+        }
+    }
+
+    /**
+     * Returns a new {@link DataFrame} sorted by the specified column, all in ascending order.
+     * @param col {@link Column}
+     * @param cols Array of additional column names or expressions to sort by.
+     * @since 1.3.0
+     */
+    sort(col /*: (Column | String) */, ...cols /*: (Column* | String*) */) /*: DataFrame */ {
+        col = helpers.jobj_from_maybe_string(col);
+        cols = cols.map(helpers.jobj_from_maybe_string);
+        return new DataFrame(this.jvm_obj.sort(col, ...cols));
+    }
+
+    /**
+     * Selects column based on the column name and return it as a {@link Column}.
+     * Note that the column name can also reference to a nested column like `a.b`.
+     * @param colName
+     * @since 1.3.0
+     */
+    col(colName /*: String */) /*: Column */ {
+        return new Column(this.jvm_obj.col(colName));
+    }
+
+    /**
+     * Selects a set of column based expressions.
+     *
+     * @param cols Array of column names or expressions.
+            If one of the column names is '*', that column is expanded to include all columns
+            in the current DataFrame.
+     * @since 1.3.0
+     */
+    select(...cols /*: (Column* | String*) */) /*: DataFrame */ {
+        cols = cols.map(helpers.jobj_from_maybe_string);
+        return new DataFrame(this.jvm_obj.select(...cols));
+    }
+
+    /**
+     * Selects a set of SQL expressions. This is a variant of `select` that accepts
+     * SQL expressions.
+     *
+     * @param exprs Array of SQL expressions.
+     * @since 1.3.0
+     */
+    selectExpr(...exprs /*: String* */) /*: DataFrame */ {
+        return new DataFrame(this.jvm_obj.selectExpr(...exprs));
+    }
+
+    /**
+     * Filters rows using the given column expression or SQL expression.
+     * @example &lt;caption>The following are equivalent:&lt;/caption>
+     *   peopleDf.filter(peopleDf.col("age").gt(15));
+     *   peopleDf.filter("age > 15");
+     * @param condition A {@link Column} of booleans or a string containing a SQL expression.
+     * @since 1.3.0
+     */
+    filter(condition /*: Column|String */) /*: DataFrame */ {
+        condition = helpers.jobj_from_maybe_string(condition);
+        return new DataFrame(this.jvm_obj.filter(condition));
+    }
+
+    /**
+     * Filters rows using the given condition. This is an alias for `filter`.
+     * @param condition
+     * @since 1.3.0
+     */
+    where(condition /*: Column|String */) /*: DataFrame */ {
+        condition = helpers.jobj_from_maybe_string(condition);
+        return new DataFrame(this.jvm_obj.filter(condition));
+    }
+
+    /**
+     * Groups the {@link DataFrame} using the specified columns, so we can run aggregations on them.
+     * See {@link GroupedData} for all the available aggregation functions.
+     *
+     * @example &lt;caption>Compute the average for all numeric columns grouped by department.&lt;/caption>
+     *   df.groupBy("department").avg();
+     *
+     * @param cols Array of column names or expressions to group by.
+     * @since 1.3.0
+     */
+    groupBy(...cols /*: (Column* | String*) */) /*: GroupedData */ {
+        cols = cols.map(helpers.jobj_from_maybe_string);
+        return new GroupedData(this.jvm_obj.groupBy(...cols));
+    }
+
+    /**
+     * Create a multi-dimensional rollup for the current {@link DataFrame} using the specified columns,
+     * so we can run aggregations on them.
+     * See {@link GroupedData} for all the available aggregation functions.
+     *
+     * @example
+     * // Compute the average for all numeric columns rolluped by department and group
+     *   df.rollup(df.col("department"), df.col("group")).avg();
+     *
+     * @param cols Array of column names or expressions.
+     * @since 1.4.0
+     */
+    rollup(...cols /*: (Column* | String*) */) /*: GroupedData */ {
+        cols = cols.map(helpers.jobj_from_maybe_string);
+        return new GroupedData(this.jvm_obj.rollup(...cols));
+    }
+
+    /**
+     * Create a multi-dimensional cube for the current {@link DataFrame} using the specified columns,
+     * so we can run aggregation on them.
+     * See {@link GroupedData} for all the available aggregation functions.
+     *
+     * @example
+     *   // Compute the average for all numeric columns cubed by department and group.
+     *   df.cube("department", "group").avg();
+     *
+     * @param cols Array of column names or expressions.
+     * @since 1.4.0
+     */
+    cube(...cols /*: (Column*|String*) */) /*: GroupedData */ {
+        cols = cols.map(helpers.jobj_from_maybe_string);
+        return new GroupedData(this.jvm_obj.cube(...cols));
+    }
+
+    /**
+     * Aggregates on the entire {@link DataFrame} without groups.
+     * @example
+     *   // df.agg(...) is a shorthand for df.groupBy().agg(...)
+     *   df.agg(F.max(df.col("age")), F.avg(df.col("salary")));
+     *   df.groupBy().agg(F.max(df.col("age")), F.avg(df.col("salary")));
+     *
+     * @param cols Array of column names or expressions.
+     * @since 1.3.0
+     */
+    agg(...cols /*: Column* */) /*: DataFrame */ {
+        cols = cols.map(col => col.jvm_obj);
+        return new DataFrame(this.jvm_obj.agg(...cols));
+    }
+
+    /**
+     * Returns a new {@link DataFrame} by taking the first `n` rows. The difference between this function
+     * and `head` is that `head` returns an array while `limit` returns a new {@link DataFrame}.
+     * @param n Number of rows.
+     * @since 1.3.0
+     */
+    limit(n /*: Int */) /*: DataFrame */ {
+        return new DataFrame(this.jvm_obj.limit(n));
+    }
+
+    /**
+     * Returns a new {@link DataFrame} containing union of rows in this frame and another frame.
+     * This is equivalent to `UNION ALL` in SQL.
+     * @param other {@link DataFrame}
+     * @since 1.3.0
+     */
+    unionAll(other /*: DataFrame */) /*: DataFrame */ {
+        return new DataFrame(this.jvm_obj.unionAll(other));
+    }
+
+    /**
+     * Returns a new {@link DataFrame} containing rows only in both this frame and another frame.
+     * This is equivalent to `INTERSECT` in SQL.
+     * @param other {@link DataFrame}
+     * @since 1.3.0
+     */
+    intersect(other /*: DataFrame */) /*: DataFrame */ {
+        return new DataFrame(this.jvm_obj.intersect(other));
+    }
+
+    /**
+     * Returns a new {@link DataFrame} containing rows in this frame but not in another frame.
+     * This is equivalent to `EXCEPT` in SQL.
+     * @param other {@link DataFrame}
+     * @since 1.3.0
+     */
+    except(other /*: DataFrame */) /*: DataFrame */ {
+        return new DataFrame(this.jvm_obj.except(other));
+    }
+
+    /**
+     * Returns a new {@link DataFrame} by sampling a fraction of rows, using a random seed.
+     *
+     * @param withReplacement Sample with replacement or not.
+     * @param fraction Fraction of rows to generate.
+     * @since 1.3.0
+     */
+    sample(withReplacement /*: Boolean */, fraction /*: Double */) /*: DataFrame */ {
+        return new DataFrame(this.jvm_obj.sample(withReplacement, fraction));
+    }
+
+    /**
+     * Randomly splits this {@link DataFrame} with the provided weights.
+     *
+     * @param weights Weights for splits, will be normalized if they don't sum to 1.
+     * @since 1.4.0
+     */
+    randomSplit(...weights /*: Double* */) /*: Array[DataFrame]*/ {
+
+        throw new Error("Not implemented");
+
+        // for some reason, this crashes the jvm. yet constructing the array
+        // in the shell and passing it directly works. haven't dug into the
+        // node-java code yet.
+
+        /*eslint-disable no-unreachable*/
+        var weightsArray = java.newArray("double", weights);
+
+        return this.jvm_obj.randomSplit(weightsArray);
+        /*eslint-enable no-unreachable*/
+
+    }
+
+
+    /**
+     * Returns a new {@link DataFrame} by adding a column or replacing the existing column that has
+     * the same name.
+     * @param colName Name of the new column.
+     * @param col {@link Column} Expression for the new column.
+     * @since 1.3.0
+     */
+    withColumn(colName /*: String */, col /*: Column */) /*: DataFrame */ {
+        col = helpers.jobj_from_maybe_string(col);
+        return new DataFrame(this.jvm_obj.withColumn(colName, col));
+    }
+
+
+    /**
+     * Returns a new {@link DataFrame} with a column dropped.
+     * This is a no-op if schema doesn't contain column name.
+     * @param col {@link Column}
+     * @since 1.4.0
+     */
+    drop(col /*: String|Column */) /*: DataFrame */ {
+        col = helpers.jobj_from_maybe_string(col);
+        return new DataFrame(this.jvm_obj.drop(col));
+    }
+
+
+    /**
+     * Returns a new {@link DataFrame} that contains only the unique rows from this {@link DataFrame}.
+     * This is an alias for `distinct`.
+     * If column names are passed in, rows are only compared in those columns.
+     *
+     * @param colNames Array of column names.
+     * @since 1.4.0
+     */
+    dropDuplicates(...colNames /*: String* */) /*: DataFrame */ {
+        return new DataFrame(this.jvm_obj.drop(...colNames));
+    }
+
+    /**
+     * Returns a new {@link DataFrame} that contains only the unique rows from this {@link DataFrame}.
+     * This is an alias for `dropDuplicates`.
+     * @since 1.3.0
+     */
+    distinct() /*: DataFrame */ {
+        return new DataFrame(this.jvm_obj.drop());
+    }
+
+    /**
+     * Computes statistics for numeric columns, including count, mean, stddev, min, and max.
+     * If no columns are given, this computes statistics for all numerical columns.
+     *
+     * This is meant for exploratory data analysis, as we make no guarantee about the
+     * backward compatibility of the schema of the resulting {@link DataFrame}. If you want to
+     * programmatically compute summary statistics, use the `agg` method instead.
+     *
+     * @example
+     *   df.describe("age", "height").show();
+     *
+     *   // output:
+     *   // summary age   height
+     *   // count   10.0  10.0
+     *   // mean    53.3  178.05
+     *   // stddev  11.6  15.7
+     *   // min     18.0  163.0
+     *   // max     92.0  192.0
+     *
+     * @param colNames Array of column names.
+     *
+     * @since 1.3.1
+     */
+    describe(...colNames /*: String* */) /*: DataFrame */ {
+        return new DataFrame(this.jvm_obj.describe(...colNames));
+    }
+
+    /**
+     * Returns the first `n` rows.
+     *
+     * Running take requires moving data into the application's driver process, and doing so with
+     * a very large `n` can crash the driver process with OutOfMemoryError.
+     *
+     * @param {Number} [n=1] Number of rows to return.
+     *
+     * @since 1.3.0
+     */
+    head(n=1 /*: Int */) /*: Array[Object]*/ {
+        return this.jvm_obj.head(n)
+            .map(row => new Row(row).values());
+    }
+
+    /**
+     * Returns an array that contains all of {@link Row}s in this {@link DataFrame}.
+     *
+     * Running collect requires moving all the data into the application's driver process, and
+     * doing so on a very large dataset can crash the driver process with OutOfMemoryError.
+     *
+     * @since 1.3.0
+     */
+    collect() /*: Array[Object]*/ {
+        return this.jvm_obj.collect()
+            .map(row => new Row(row).values());
+    }
+
+    /**
+     * Returns the number of rows in the {@link DataFrame}.
+     * @since 1.3.0
+     */
+    count() /*: Number */ {
+        return this.jvm_obj.count().valueOf();
+    }
+
+    /**
+     * Returns a partitioned {@link DataFrame}.
+     *
+     * If partition expressions are provided, partition by the given
+     * partitioning expressions into `numPartitions`. The resulting DataFrame
+     * is hash partitioned. (This is the same operation as "DISTRIBUTE BY" in
+     * SQL (Hive QL).)
+     *
+     * @param {Number} [numPartitions] Number of partitions.
+     * @param partitionExprs Partitioning expressions.
+     * @since 1.3.0
+     */
+    repartition(numPartitions /*: Int */, ...partitionExprs /*: Column* */) /*: DataFrame */ {
+        if (partitionExprs.length===0) {
+            return new DataFrame(this.jvm_obj.repartition(numPartitions));
+        } else {
+            return new DataFrame(this.jvm_obj.repartition(numPartitions, partitionExprs));
+        }
+    }
+
+
+
+    /**
+     * Registers this {@link DataFrame} as a temporary table using the given name.  The lifetime of this
+     * temporary table is tied to the {@link SQLContext} that was used to create this DataFrame.
+     *
+     * @param tableName Table name.
+     * @since 1.3.0
+     */
+    registerTempTable(tableName /*: String */) /*: Unit */ {
+        this.jvm_obj.registerTempTable(tableName);
+    }
+
+    /**
+     * Interface for saving the content of the {@link DataFrame} out into external storage.
+     * @since 1.4.0
+     */
+    write() /*: DataFrameWriter*/ {
+        return new DataFrameWriter(this);
+    }
+}
+
+module.exports = DataFrame;
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.0</a> on Thu Dec 17 2015 13:24:15 GMT-0800 (PST) using the Minami theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/linenumber.js"></script>
+</body>
+</html>
