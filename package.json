@@ -1,6 +1,6 @@
 {
   "name": "apache-spark-node",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "node.js bindings for Apache Spark",
   "main": "index.js",
   "scripts": {
