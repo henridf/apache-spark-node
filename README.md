@@ -18,8 +18,9 @@ Status
 ------
 
 This project is already usable in its present form, but it is still in early
-stages and under development. APIs may change. Notably not yet implemented
-are:
+stages and under development. APIs may change.
+
+Notably not yet implemented are:
 
 - support for user-defined functions
 - jvm-side helpers to for functions/methods which cannot currently be called
@@ -32,6 +33,7 @@ Getting started
 
 ### Requirements
 
+- Linux or OS X (on Windows, there are currently problems building node add-ons)
 - Node: Developed with Node 0.12.7. Should work with later versions, but I haven't
   tested yet. Feedback from anyone trying out with other versions would be helpful.
 - Java 8
