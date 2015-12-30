@@ -1,4 +1,5 @@
-[![Build Status](https://travis-ci.org/henridf/apache-spark-node.svg?branch=master)](https://travis-ci.org/henridf/apache-spark-node)
+[![Build Status](https://travis-ci.org/henridf/apache-spark-node.svg?branch=master)](https://travis-ci.org/henridf/apache-spark-node) 
+[![ghit.me](https://ghit.me/badge.svg?repo=henridf/apache-spark-node)](https://ghit.me/repo/henridf/apache-spark-node)
 
 Apache Spark <=> Node.js
 ========================
