@@ -3,7 +3,7 @@
 Apache Spark <=> Node.js
 ========================
 
-Node.js bindings for Apache Spark.
+Node.js bindings for Apache Spark DataFrame APIs.
 
 **Table of Contents**
 
