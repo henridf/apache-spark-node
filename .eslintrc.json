@@ -11,6 +11,12 @@
         "semi": [
             2,
             "always"
+        ],
+        "arrow-spacing": [
+            2
+        ],
+        "no-const-assign": [
+            2
         ]
     },
     "env": {
