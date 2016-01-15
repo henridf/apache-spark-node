@@ -7,7 +7,7 @@ Node.js bindings for Apache Spark DataFrame APIs.
 
 **Table of Contents**
 
-- [API Docs](#api-docs)                                                             
+- [API Docs](#api-docs)
 - [Status](#status)
 - [Getting Started](#getting-started)
 - [Usage](#usage)
