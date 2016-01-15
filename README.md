@@ -150,7 +150,7 @@ or the shorter (equivalent) version:
 collect the result (as an array of rows) and assign it to a javascript
 variable:
 
-    $ var res = df.select("name").collect()
+    $ var res = df.select("name").collectSync()
 
 Select everybody and increment age by 1:
 
