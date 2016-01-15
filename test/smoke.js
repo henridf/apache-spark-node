@@ -20,21 +20,33 @@ describe("Smoke test", function() {
     });
 
     it("sqlContext.read().json() returns DataFrame", function(done) {
-        var df = sqlContext.read().json(path.join(__dirname, "..", "data/people.json"));
+        sqlContext.read().json(path.join(__dirname, "..", "data/people.json"), function(err, res) {
+            expect(err).to.be.undefined;
+            expect(res).to.be.an.instanceof(DataFrame);
+            done();
+        });
+    });
+
+    it("sqlContext.read().jsonSync() returns DataFrame", function(done) {
+        var df = sqlContext.read().jsonSync(path.join(__dirname, "..", "data/people.json"));
         expect(df).to.be.an.instanceof(DataFrame);
         done();
     });
 
     it("sqlContext.read().collect() returns array of Rows with correct values", function(done) {
-        sqlContext.read().json("./data/people.json").collect(function(err, rows) {
-            rows.forEach(function (row) { expect(row).to.be.an.instanceof(Object);});
-            expect(rows).to.deep.equal([[null, "Michael"], [30, "Andy"], [19, "Justin"]]);
-            done();
+        sqlContext.read().json("./data/people.json", function (err, df) {
+            expect(err).to.be.undefined;
+            df.collect(function(err, rows) {
+                expect(err).to.be.undefined;
+                rows.forEach(function (row) { expect(row).to.be.an.instanceof(Object);});
+                expect(rows).to.deep.equal([[null, "Michael"], [30, "Andy"], [19, "Justin"]]);
+                done();
+            });
         });
     });
 
     it("sqlContext.read().collectSync() returns array of Rows with correct values", function(done) {
-        var rows = sqlContext.read().json("./data/people.json").collectSync();
+        var rows = sqlContext.read().jsonSync("./data/people.json").collectSync();
 
         rows.forEach(function (row) { expect(row).to.be.an.instanceof(Object);});
 
@@ -52,8 +64,8 @@ describe("Smoke test", function() {
             done();
         });
 
-        it("var df = sqlContext.read().json(\"data/people.json\");", function(done) {
-            df = sqlContext.read().json(path.join(__dirname, "..", "data/people.json"));
+        it("var df = sqlContext.read().jsonSync(\"data/people.json\");", function(done) {
+            df = sqlContext.read().jsonSync(path.join(__dirname, "..", "data/people.json"));
             expect(df).to.be.an.instanceof(DataFrame);
             done();
         });
@@ -209,7 +221,7 @@ describe("Smoke test", function() {
         it("check counts ", function(done) {
 
             var sqlContext = spark([], process.env.ASSEMBLY_JAR).sqlContext;
-            var lines = sqlContext.read().text(path.join(__dirname, "..", "data/words.txt"));
+            var lines = sqlContext.read().textSync(path.join(__dirname, "..", "data/words.txt"));
             var F = spark([], process.env.ASSEMBLY_JAR).sqlFunctions;
             var splits = lines.select(F.split(lines.col("value"), " ").as("words"));
             var occurrences = splits.select(F.explode(splits.col("words")).as("word"));

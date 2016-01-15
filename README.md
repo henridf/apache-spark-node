@@ -85,7 +85,7 @@ host volumes to use files on your host system with `spark-node`. For example
 
 will map the host's `/var/data` directory to `/data` within the Docker image. This means that you can use
 
-    $ var df = sqlContext.read().json("/data/people.json")
+    $ var df = sqlContext.read().jsonSync("/data/people.json")
 
 to load a file at `/var/data/people.json` on the host system.
 
@@ -113,7 +113,7 @@ To see available command-line options, do `./bin/spark-node --help`.
 
 Load a dataframe from a json file:
 
-    $ var df = sqlContext.read().json("./data/people.json")
+    $ var df = sqlContext.read().jsonSync("./data/people.json")
 
 Load a dataframe from a list of javascript objects:
 
@@ -196,7 +196,7 @@ Examples
 
 Create dataframe from text file:
 
-    $ var lines = sqlContext.read().text("data/words.txt");
+    $ var lines = sqlContext.read().textSync("data/words.txt");
 
 (_Note: support for the "text" format was added in Spark 1.6_).
 
