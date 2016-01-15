@@ -6,6 +6,7 @@
   "scripts": {
     "test": "mocha test/*.js",
     "compile": "babel --out-dir js lib",
+    "watch:compile": "nodemon -q -w lib -w services --exec 'npm run compile'",
     "lint": "eslint index.js lib/* test/* bin/spark-node",
     "prepublish": "npm run compile",
     "docs": "jsdoc -c .jsdoc.json"
