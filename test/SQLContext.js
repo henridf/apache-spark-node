@@ -19,8 +19,11 @@ describe("SQLContext", function() {
     it("emptyDataFrame() returns df with 0 rows", function(done) {
         var df = sqlContext.emptyDataFrame();
         expect(df).to.be.an.instanceof(DataFrame);
-        expect(df.count()).to.equal(0);
-        done();
+        df.count(function(err, res) {
+            expect(err).to.be.undefined;
+            expect(res).to.equal(0);
+            done();
+        });
     });
 
     it("read() returns a DataFrameReader", function(done) {
@@ -31,26 +34,30 @@ describe("SQLContext", function() {
 
     it("range(3) returns a DataFrame with 0..2", function(done) {
         var df = sqlContext.range(3);
-        var values = df.collect();
+        df.collect(function(err, res) {
+            expect(err).to.be.undefined;
+            expect(res).to.deep.equal([[0], [1], [2]]);
+            done();
+        });
 
-        expect(values).to.deep.equal([[0], [1], [2]]);
-        done();
     });
 
     it("range(1, 4, 2) returns a DataFrame with 1,3", function(done) {
         var df = sqlContext.range(1, 4, 2);
-        var values = df.collect();
-
-        expect(values).to.deep.equal([[1], [3]]);
-        done();
+        df.collect(function(err, res) {
+            expect(err).to.be.undefined;
+            expect(res).to.deep.equal([[1], [3]]);
+            done();
+        });
     });
 
     it("createDataFrame([{a: 1}, {b: 2}])", function(done) {
         var df = sqlContext.createDataFrame([{a: 1}, {b: 2}]);
-        var values = df.collect();
-
-        expect(values).to.deep.equal([[ 1, null ], [ null, 2 ]]);
-        done();
+        df.collect(function(err, res) {
+            expect(err).to.be.undefined;
+            expect(res).to.deep.equal([[ 1, null ], [ null, 2 ]]);
+            done();
+        });
     });
 
     it("sql(..) with simple SELECT statement", function(done) {
@@ -60,11 +67,11 @@ describe("SQLContext", function() {
 
         var df = sqlContext.createDataFrame(people);
         df.registerTempTable("people");
-        var values = sqlContext.sql("SELECT name FROM people WHERE age >= 13 AND age <= 19").collect();
-
-        expect(values).to.deep.equal([["Justin"]]);
-        done();
+        sqlContext.sql("SELECT name FROM people WHERE age >= 13 AND age <= 19").collect(
+            function(err, res) {
+                expect(err).to.be.undefined;
+                expect(res).to.deep.equal([["Justin"]]);
+                done();
+            });
     });
-
-
 });
