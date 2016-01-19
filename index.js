@@ -6,16 +6,14 @@ var path = require("path");
 var spark = require("./js");
 var functions = require("./js/functions");
 
-module.exports = function (args, assembly_jar) {
+module.exports = function (args) {
 
     var args =
         // fake presence of a main class so that SparkSubmitArguments doesn't
         // bail. (It won't be run)
         ["--class", "org.apache.spark.repl.Main",
             "--name", "spark-node shell"]
-            .concat(
-                process.argv.slice(2) // remove 'node spark-node'
-            )
+            .concat(args)
             .concat(["spark-shell"]);
 
     var assembly_jar = process.env.ASSEMBLY_JAR;

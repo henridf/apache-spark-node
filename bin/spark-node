@@ -7,7 +7,7 @@ process.title = "spark-node";
 var repl = require("repl");
 
 var spark_node = require("../");
-var context = spark_node();
+var context = spark_node(process.argv.slice(2));
 
 global.sqlContext= context.sqlContext;
 global.sqlFunctions = context.sqlFunctions;
