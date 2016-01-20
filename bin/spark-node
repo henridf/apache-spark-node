@@ -2,32 +2,12 @@
 /*eslint-disable no-console*/
 "use strict";
 
-var fs = require("fs");
-var path = require("path");
-
 process.title = "spark-node";
 
 var repl = require("repl");
 
 var spark_node = require("../");
-var args =
-        // fake presence of a main class so that SparkSubmitArguments doesn't
-        // bail. (It won't be run)
-        ["--class", "org.apache.spark.repl.Main",
-         "--name", "spark-node shell"]
-        .concat(
-            process.argv.slice(2) // remove 'node spark-node'
-        )
-        .concat(["spark-shell"]);
-
-var assembly_jar = process.env.ASSEMBLY_JAR;
-
-if (typeof assembly_jar != "string" || !fs.statSync(path.join(assembly_jar)).isFile()) {
-    console.error("Error: ASSEMBLY_JAR environment variable does not contain valid path");
-    process.exit(1);
-}
-
-var context = spark_node(args, assembly_jar);
+var context = spark_node(process.argv.slice(2));
 
 global.sqlContext= context.sqlContext;
 global.sqlFunctions = context.sqlFunctions;
