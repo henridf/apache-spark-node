@@ -39,8 +39,7 @@ Getting started
 ### Requirements
 
 - Linux or OS X (on Windows, there are currently problems building node add-ons)
-- Node: Developed with Node 0.12.7. Should work with later versions, but I haven't
-  tested yet. Feedback from anyone trying out with other versions would be helpful.
+- Node.js, version 4+
 - Java 8
 - Spark >= 1.5. You'll need the Spark Assembly jar, which
   contains all of the Spark classes. If you don't have an existing
