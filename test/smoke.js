@@ -55,6 +55,22 @@ describe("Smoke test", function() {
         done();
     });
 
+    it("sqlContext.read().collectPromised() returns array of Rows with correct values", function(done) {
+        sqlContext.read().jsonPromised("./data/people.json").then(function(df, err) {
+            expect(err).to.be.undefined;
+            return df.collectPromised();
+        }).then(function(rows, err) {
+            expect(err).to.be.undefined;
+            rows.forEach(function (row) { expect(row).to.be.an.instanceof(Object);});
+            expect(rows).to.deep.equal([[null, "Michael"], [30, "Andy"], [19, "Justin"]]);
+            done();
+        }).catch(function(err) {
+            expect(err).to.be.undefined;
+            done();
+        });
+    });
+
+
 
     describe("Readme steps", function() {
         var df, sqlContext;
@@ -131,6 +147,13 @@ describe("Smoke test", function() {
             var res = df.select("name").collectSync();
             expect(res).to.deep.equal([["Michael"], ["Andy"], ["Justin"]]);
             done();
+        });
+
+        it("var res = df.select(\"name\").collectPromised()", function(done) {
+            df.select("name").collectPromised().then(function(res) {
+                expect(res).to.deep.equal([["Michael"], ["Andy"], ["Justin"]]);
+                done();
+            });
         });
 
         it("df.select(df.col(\"name\"), df.col(\"age\").plus(1)).show()", function(done) {
