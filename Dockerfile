@@ -16,7 +16,7 @@ RUN apt-key adv --keyserver keyserver.ubuntu.com --recv E56151BF && \
 
 # Overall ENV vars
 ENV APP_BASE_PATH /app
-ENV SPARK_VERSION 1.5.2
+ENV SPARK_VERSION 1.6.3
 ENV MESOS_BUILD_VERSION 0.25.0-0.2.70
 
 # Install Node.js 5.x

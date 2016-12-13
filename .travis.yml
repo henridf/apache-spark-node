@@ -6,7 +6,7 @@ jdk:
   - oraclejdk8
 
 env:
-  - NODE_VERSION=v4.2.2 CC=clang CXX=clang++ ASSEMBLY_JAR=spark-1.6.0-bin-hadoop2.6/lib/spark-assembly-1.6.0-hadoop2.6.0.jar
+  - NODE_VERSION=v4.2.2 CC=clang CXX=clang++ ASSEMBLY_JAR=spark-1.6.3-bin-hadoop2.6/lib/spark-assembly-1.6.3-hadoop2.6.0.jar
 
 before_install:
   - nvm install $NODE_VERSION
