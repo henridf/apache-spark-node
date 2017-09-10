@@ -1,5 +1,8 @@
 [![Build Status](https://travis-ci.org/henridf/apache-spark-node.svg?branch=master)](https://travis-ci.org/henridf/apache-spark-node)
 
+
+__This repository is no longer under development. Everything here should continue to work (with appropriate Spark and node versions), but the repo will not be further developed or maintained. I will still try to review any PRs. If anyone has any interest in taking this over, please contact [@henridf](https://twitter.com/henridf).__
+
 Apache Spark <=> Node.js
 ========================
 
